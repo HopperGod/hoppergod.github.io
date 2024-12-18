@@ -1,0 +1,330 @@
+* {
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+       /* border: red solid 1px */
+    
+}
+
+.home-body {
+    margin: 0;
+    font-size: 18px;
+    /*background-image: url("../images/close_plasma_sheet2-1.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    z-index: 1;*/
+    
+    background-image: url(../images/bottom_main-1.jpg);
+    background-position: bottom;
+    background-size: contain;
+}
+
+header {
+    position: fixed;
+    /*display: flexbox;*/
+    text-align: center;
+    width: 100%;
+    max-height: 80px;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+	background-color: hsla(202, 60%, 11%, 0.7);
+    font-size: 1rem;
+    color: hsl(201, 35%, 81%);
+
+}
+
+header h1 {
+	display: inline;
+    justify-content: center;
+    letter-spacing: 0.12em;
+}
+	
+.logo {
+    width: 5.8rem;
+    height: auto;
+    
+}
+
+
+nav {
+    position: fixed;
+	top: 80px;
+	left: 0;
+	right: 0;
+    background-color: hsla(195, 8%, 10%, 0.5);
+    z-index: 1;
+    width: 100%;
+    max-height: 55px;
+    min-height: 55px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    max-height: 55px;
+    min-height: 55px;
+    
+}
+
+.nav li {
+    margin-right: 3vw;
+    margin-left: 2.5vw;
+    font-size: 1vw;
+    letter-spacing: 0.12em;
+    text-align: center;
+    
+
+}
+
+.nav:hover {
+    background-color: hsla(195, 8%, 10%, 0.8);
+}
+
+.home {
+    display: block;
+    position: relative;
+    /*top: 135px;*/
+    left: 0;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: brightness(60%);
+    /*background-image: url(../images/bottom_main.jpg);
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: repeat-y;
+    z-index: -1;*/
+    
+    background-image: url("../images/close_plasma_sheet3.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.howdy {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10vw;
+    justify-content: center;
+    transform: translateY(60px);
+}
+
+.howdy h1 {
+    font-size: 5vw;
+    color: hsl(199, 61%, 93%);
+    transform: translateY(-4vw);
+    
+    text-shadow: rgb(37, 0, 247) 2px 2px 10px,
+                 rgb(0, 110, 255) -2px -2px 10px,
+                 red -2px 2px 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5vw;
+    transform: translateY(3vw);
+
+    
+}
+
+.btn {
+    display: inline-flex;
+    padding: 10px 20px;
+    margin: 0;
+    background-color: rgb(1, 2, 66);
+    border: 4px solid rgb(231, 230, 255);
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px 2px rgb(76, 0, 252);
+    transition: all .5s ease-out .1s;
+}
+
+.btn:hover {
+    color: rgb(1, 2, 66);
+    background-color: rgb(231, 230, 255);
+    border: 4px solid rgb(1, 2, 66);
+    box-shadow: inset 0 0 5px 2px rgb(8, 0, 255);
+}
+
+.cns {
+    transform: translateX(10vw);
+}
+
+.delrs {
+    right: 20px;
+    transform: translateX(-10vw);
+}
+
+.dealers {
+    padding: 10px 43px;
+}
+
+.about {
+    padding: 2vw;
+    margin: 14vw 12vw 10vw 12vw;
+    color:hsl(199, 61%, 93%);
+    background-color: hsla(210, 100%, 5%, 0.8);
+}
+
+.about h2,
+.facility h2 {
+    font-size: 1vw;
+}
+
+.about p,
+.capabilities p,
+.about a {
+    font-size: 1vw;
+    line-height: 2.5vw;
+    letter-spacing: 0.12vw;
+    justify-content: left;
+    font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.about a {
+    text-decoration:underline;
+}
+
+.about a:hover {
+    color: rgb(50, 205, 192);
+}
+
+.capabilities {
+    display: flexbox;
+    color: whitesmoke;
+}
+
+.facility {
+    display: inline-flex;
+    flex-direction: column;
+    color: hsl(199, 61%, 93%);
+    width: 70vw;
+    justify-content: center;
+    /*height: 14vw; */
+    overflow: hidden;
+    transform: translateY(-100px);
+    background-color: hsla(210, 100%, 7%, 0.8);
+    margin-top: 5vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    
+}
+
+.capable {
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    justify-content: left;
+    
+    border-width: 2px 4px;
+    border-color: rgb(232, 230, 252);
+    border-style: solid;
+    
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.685));
+    box-shadow: inset 0 0 100px 10px rgba(0, 25, 253, 0.589);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    justify-items: left;
+    flex-shrink: 2;
+}
+
+.container figcaption {
+    color:rgb(214, 220, 248);
+    margin-top: 1vw;
+    font-weight: bold;
+    font-size: 1.5vw;
+
+}
+
+.img-container {
+    display: flex;
+    flex-shrink: 2;
+    max-width: 25vw;
+    height: 25vw;
+    border: 2px solid rgb(251, 251, 255);
+}
+
+.img-container img{
+    display: inline-flex;
+    max-width: 100%;
+    height: auto;
+}
+
+.capable p {
+    display: inline-flex;
+    align-items: center;
+    float: right;
+    text-align: left;
+    font-size: 1.5vw;
+    line-height: 4vw;
+    width: 60vw;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: hsla(202, 60%, 11%, 0.7);
+    z-index: 1;
+    
+}
+
+.contact {
+    display: inline-block;
+   
+}
+
+.contact li {
+    color: hsl(199, 61%, 93%);
+    
+}
+
+.contact li,
+.contact li a {
+    font-family: "Bai Jamjuree", Helvetica, sans-serif;
+}
+
+.social {
+    float: right;
+    font-size: 48px;
+    color: hsl(199, 61%, 93%);
+    margin-right: 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border: 5px solid hsl(199, 61%, 93%);
+    border-radius: 25% 10%;
+    
+}
+
+.social .fa-facebook {
+    margin-right: 0.3rem;
+}
+
+.social .fa-facebook:hover,
+.social .fa-instagram:hover,
+.contact a:hover {
+    color:rgb(63, 52, 216);
+}
+
+a {
+    text-decoration: none;
+    color:hsl(201, 35%, 81%)
+}
+
+a:hover {
+    cursor: pointer;
+
+}
+
+
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+}
