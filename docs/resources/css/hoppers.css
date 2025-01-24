@@ -74,10 +74,51 @@ aside {
   border-radius: 15px;
 }
 
+/*css for container holding everything related to the cone builder*/
+
+#program {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(250px, auto);
+}
+
+#selectors {
+  grid-column: 2 / 5;
+  grid-row: 1 / 3;
+  text-align: start;
+}
+
+#theShow {
+  grid-column: 5 / 13;
+  grid-row: 1 / 3
+}
+
+#information {
+  color: white;
+  display: flex;
+  justify-content: center;
+  grid-column: 1 / 13;
+  grid-row: 3;
+  font-size: 2rem;
+}
+
+select,
+option {
+  font-size: 2rem;
+  font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+.selector {
+  margin: 30px;
+}
+
 .slideshow-container {
   max-width: 750px;
   position: relative;
   margin: auto;
+  text-align: start;
 }
 
 .mySlides {
@@ -141,6 +182,35 @@ aside {
   background-color: #717171;
 }
 
+
+/*css for info section of cone builder*/
+
+
+
+#weightInfo,
+#bPInfo,
+#capacityInfo,
+#legInfo {
+  margin: 20px;
+  font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
+}
+
+#weightNumber,
+#bPNumber,
+#capacityNumber,
+#legNumber {
+  background-color: white;
+  color: black;
+}
+
+.know {
+  font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+/*remember to get rid of table css rules*/
 table {
     
     color:rgb(226, 226, 245);
