@@ -1002,7 +1002,7 @@ document.getElementById('selectionF').oninput = function() {
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
 
-  } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 3 && skidType.selectedIndex === 2) {
+  }  else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 3 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "3927",
     document.getElementById('bPNumber').innerHTML = "40",
     document.getElementById('capacityNumber').innerHTML = "398",
