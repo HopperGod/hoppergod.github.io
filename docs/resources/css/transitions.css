@@ -10,76 +10,14 @@
   background-color: rgb(0, 0, 2);
 }
 
-header {
-    position: fixed;
-    /*display: flexbox;*/
-    text-align: center;
-    width: 100%;
-    max-height: 80px;
-    z-index: 1;
-    top: 0px;
-    left: 0px;
-	background-color: hsla(202, 60%, 11%, 1);
-    font-size: 1rem;
-    color: hsl(201, 35%, 81%);
 
-}
-
-header h1 {
-	display: inline;
-    justify-content: center;
-    letter-spacing: 0.12em;
-}
-	
-.logo {
-    width: 5.8rem;
-    height: auto;
-    
-}
-
-
-nav {
-    position: fixed;
-	top: 80px;
-	left: 0;
-	right: 0;
-    background-color: hsla(195, 8%, 10%, 1);
-    z-index: 1;
-    width: 100%;
-    max-height: 55px;
-    min-height: 55px;
-}
-
-.nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    max-height: 55px;
-    min-height: 55px;
-    
-}
-
-.nav li {
-    margin-right: 3vw;
-    margin-left: 2.5vw;
-    font-size: 1vw;
-    letter-spacing: 0.12em;
-    text-align: center;
-    
-
-}
-
-.nav:hover {
-    background-color: hsla(195, 8%, 10%, 0.8);
-}
 
 .tran-main {
     display: flex;
     flex-direction: column;
     position: relative;
     padding-top: 150px;
-    top: 135px;
+    top: 15px;
     width: 100%;
     text-align: center;
     justify-content: center;
@@ -104,18 +42,26 @@ nav {
   .transitions li,
   .transitions h2 {
     font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
-    letter-spacing: 0.1em;
-    line-height: 2vw;
+    letter-spacing: 0.2rem;
+    line-height: 2rem;
     color: rgb(226, 226, 245);
   }
+
+.transitions p {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+
+}
+
 
   .transitions {
     display: flex;
     flex-direction: row;
     color:rgb(226, 226, 245);
-    background-color: hsla(210, 100%, 5%, 0.5);
+    background-color: hsla(210, 100%, 5%, 0.9);
     margin: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
+    padding-bottom: 30px;
     
     
   }
@@ -123,7 +69,8 @@ nav {
   .transitions img {
     margin: 15px;
     width: auto;
-    height: 50vw;
+    height: 30rem;
+    align-self: center;
   }
 
   .transitions ul {
@@ -140,60 +87,3 @@ nav {
 
 
 
-footer {
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    background-color: hsla(202, 60%, 11%, 0.7);
-    z-index: 1;
-    
-}
-
-.contact {
-    display: inline-block;
-   
-}
-
-.contact li {
-    color: hsl(199, 61%, 93%);
-    
-}
-
-.contact li,
-.contact li a {
-    font-family: "Bai Jamjuree", Helvetica, sans-serif;
-}
-
-.social {
-    float: right;
-    font-size: 48px;
-    color: hsl(199, 61%, 93%);
-    margin-right: 1.25rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    padding: 0.5rem;
-    border: 5px solid hsl(199, 61%, 93%);
-    border-radius: 25% 10%;
-    
-}
-
-.social .fa-facebook {
-    margin-right: 0.3rem;
-}
-
-.social .fa-facebook:hover,
-.social .fa-instagram:hover,
-.contact a:hover {
-    color:rgb(63, 52, 216);
-}
-
-a {
-    text-decoration: none;
-    color:hsl(201, 35%, 81%)
-}
-
-a:hover {
-    cursor: pointer;
-
-}

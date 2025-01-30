@@ -4,9 +4,12 @@
     
 }
 
+html {
+    font-size: 16px;
+}
+
 .home-body {
     margin: 0;
-    font-size: 18px;
    /* background-image: url("../images/close_plasma_sheet2-1.jpg");
     background-repeat: no-repeat;
     background-size: auto;
@@ -19,7 +22,7 @@
 
 header {
     position: fixed;
-    /*display: flexbox;*/
+    
     text-align: center;
     width: 100%;
     max-height: 80px;
@@ -29,25 +32,39 @@ header {
 	background-color: hsla(202, 60%, 11%, 1);
     font-size: 1rem;
     color: hsl(201, 35%, 81%);
-
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
 }
+
 
 header h1 {
-	display: inline;
-    justify-content: center;
+	display: flex;
     letter-spacing: 0.12em;
+    
 }
-	
+
 .logo {
-    width: 5.8rem;
+    width: 4rem;
     height: auto;
+    
+}
+
+#twe {
+    justify-self: flex-start;
+    padding-left: 1rem;
+}
+
+#worley-hoppers {
+    padding-right: 1rem;  
+    width: 6rem;
     
 }
 
 
 nav {
     position: fixed;
-	top: 80px;
+	top: 78px;
 	left: 0;
 	right: 0;
     background-color: hsla(195, 8%, 10%, 1);
@@ -59,7 +76,7 @@ nav {
 
 .nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 0;
     max-height: 55px;
@@ -68,12 +85,12 @@ nav {
 }
 
 .nav li {
-    margin-right: 3vw;
-    margin-left: 2.5vw;
-    font-size: 1vw;
+   /* margin-right: 3vw;
+    margin-left: 2.5vw; */
+    font-size: 1rem;
     letter-spacing: 0.12em;
     text-align: center;
-    
+    color: hsl(201, 35%, 81%);
 
 }
 
@@ -266,10 +283,11 @@ nav {
 
 footer {
     position: fixed;
+    max-height: 70px;
     bottom: 0px;
     left: 0px;
     width: 100%;
-    background-color: hsla(202, 60%, 11%, 0.7);
+    background-color: hsla(202, 60%, 11%, 0.9);
     z-index: 1;
     
 }
@@ -287,17 +305,22 @@ footer {
 .contact li,
 .contact li a {
     font-family: "Bai Jamjuree", Helvetica, sans-serif;
+    letter-spacing: 0.15rem;
+}
+
+.contact li {
+    transform: translateY(-0.6rem);
 }
 
 .social {
     float: right;
-    font-size: 48px;
+    font-size: 2.5rem;
     color: hsl(199, 61%, 93%);
     margin-right: 1.25rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-top: 0.09rem;
+    margin-bottom: 0.5rem;
     padding: 0.5rem;
-    border: 5px solid hsl(199, 61%, 93%);
+    border: 4px solid hsl(199, 87%, 76%);
     border-radius: 25% 10%;
     
 }
@@ -312,9 +335,13 @@ footer {
     color:rgb(63, 52, 216);
 }
 
+.nav li a {
+    color: hsl(197, 41%, 83%);
+}
+
 a {
     text-decoration: none;
-    color:hsl(201, 35%, 81%)
+    color:hsl(201, 97%, 76%);
 }
 
 a:hover {
