@@ -10,6 +10,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script defer src="scripts/home.js"></script> 
     </head>
     <body class="home-body">
       <header>
@@ -19,9 +21,9 @@
           
         <img class="logo" id="worley-hoppers" src="resources/images/translucent_logo.png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
             
-    </header>
-    <nav>
-            <ul class="nav">
+      </header>
+      <nav>
+            <ul class="nav" id="toggled">
                 <li>|</li>
                 <li><a href="index.html">Home</a>
                 </li>
@@ -49,11 +51,13 @@
                 <li>|</li>
 
             </ul>
-        </nav>
-        <main class="home">
+          <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
+      </nav>
+      <main class="home">
           
           <section class="howdy">
-            <h1>Quality and Efficiency</h1>
+            <img src="resources/images/translucent_logo.png">
+            <h1>The Worley Way</h1>
             <div class="buttons">
               <a class="cns" href="hoppers.html"><h3 class="btn cones">Browse cones</h3></a>
               <br>
@@ -84,10 +88,12 @@
                   <img class="yask-img"  src="resources/images/robot.jpg">
                 </figure>
               </div>
-            
-              <p>Our state-of-the-art Yaskawa robot delivers precise, high-speed performance. It is best suited for repetitive parts, such as the skid sections on our hopper cones. 
+              
+                <h3>Yaskawa AR3120 Welding Robot</h3>
+                <p>Our state-of-the-art Yaskawa robot delivers precise, high-speed performance. It is best suited for repetitive parts, such as the skid sections on our hopper cones. 
                  With an impressive 12-foot arm length, it can easily handle even the largest skid sections, including those on our 33-foot hopper cones.
-              </p>
+                </p>
+              
             </div>
 
             <div class="capable plasma-table">
@@ -97,7 +103,7 @@
                     <img src="resources/images/plasma_table.jpg">
                 </figure>
               </div>
-
+              <h3>Hypertherm CNC Plasma Table</h3>
               <p>This 400 Amp high-definition plasma table is capable of cutting material up to 3” thick. The rotating torch head allows us to cut bevels on plate up to 45°.
                  With a workable cutting area of 8x12 feet, we can handle a wide variety of projects.</p>
 
@@ -110,6 +116,7 @@
                     <img src="resources/images/saw_1x1.jpg">
                   </figure>
                 </div>
+                <h3>Omada VT5063</h3>
                 <p>Horizontal Band Saw capable of cutting up to 20 inch diameter metal tubing with a 60 degree swing in either direction.</p>
             </div>
             
@@ -120,6 +127,7 @@
                     <img src="resources/images/ironworker_1x1.jpg">
                   </figure>
                 </div>
+                <h3>Geka Ironworker</h3>
                 <p>Multipurpose machine used for punching holes and shearing angle iron, flat bar, as well as round bar.</p>
 
             </div>
@@ -131,6 +139,7 @@
                     <img src="resources/images/bender.jpg">
                   </figure>
                 </div>
+                <h3>Fabmaster Horizontal Bender</h3>
                 <p>Great for bending small parts and tight boxes. Capacity ranges from 14 gauge to 1/2 plate.</p>
 
             </div>
@@ -142,6 +151,7 @@
                     <img src="resources/images/roller.jpg">
                   </figure>
                 </div>
+                <h3>DAVI 4-Roll</h3>
                 <p>Rolls plate, cylinders, and cones up to 6 feet wide. Thickness ranges from 14 gauge up to 1 inch depending on width.</p>
             </div>
 
@@ -166,8 +176,8 @@
           <br>
           
 
-        </main>
-        <footer>
+      </main>
+      <footer>
             <ul class="contact">
                 <li>Phone: (306)752-3635</li>
                 <li>Email: trworley@sasktel.net</li>
@@ -177,7 +187,7 @@
               <a target="_blank" href="https://www.facebook.com/p/TW-Enterprises-Worley-Hoppers-100049058207312/"><i class="fa-brands fa-facebook"></i></a>
               <a target="_blank" href="https://www.instagram.com/t.w.enterprises/"><i class="fa-brands fa-instagram"></i></a>
             </div>
-        </footer>
+      </footer>
 
     </body>
 </html>

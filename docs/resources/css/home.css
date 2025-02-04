@@ -1,8 +1,400 @@
+@media only screen and (max-width: 1200px) and (min-width: 560px) {
+    
+
+    header,
+    header h1,
+    header img {
+        display: none;
+        color: hsla(195, 8%, 10%, 0);
+        background-color: hsla(195, 8%, 10%, 0);
+        position: absolute;
+    }
+
+    nav {
+        top: 0 !important;
+        position: relative;
+        background-image: url(../images/skid_high.jpg);
+        background-size: cover;
+        background-color: hsla(0, 0%, 0%, 0.626) !important;
+        background-blend-mode: darken;
+    }
+
+    .nav {
+        display:none !important;
+        position: fixed;
+        max-height: none !important;
+        min-height: 0 !important;
+        line-height: 2rem;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+        
+    }
+
+    .expand {
+        display:block !important;
+        position: relative;
+        max-height: none !important;
+        min-height: 0 !important;
+        line-height: 2rem;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+        padding: 0;
+    }
+
+    .vert-nav {
+        display: block !important;
+        justify-content: center;
+    }
+    
+    .nav-button {
+        text-align: center;
+        font-size: 3rem;
+        color: rgb(191, 219, 240);
+        margin: 0;
+
+    }
+
+    .fa-bars {
+        font-size: 3rem;
+        color: rgb(191, 219, 240);
+        position: absolute;
+        margin-left: 0.5rem;
+    }
+
+    .fa-bars:hover {
+        cursor: pointer;
+    }
+
+    .home {
+        top: 0px !important;
+    }
+
+    .buttons {
+        grid-column: 1/17;
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 1.5rem;
+        transform: translateY(3rem);
+    
+        
+    }
+    
+    .btn {
+        display: inline-flex;
+        padding: 10px 20px;
+        margin: 0;
+        background-color: rgb(1, 2, 66);
+        border: 4px solid rgb(231, 230, 255);
+        border-radius: 5px;
+        box-shadow: inset 0 0 5px 2px rgb(76, 0, 252);
+        transition: all .5s ease-out .1s;
+    }
+    
+    .btn:hover {
+        color: rgb(1, 2, 66);
+        background-color: rgb(231, 230, 255);
+        border: 4px solid rgb(1, 2, 66);
+        box-shadow: inset 0 0 5px 2px rgb(8, 0, 255);
+    }
+    
+    .cns {
+        transform: translateX(0rem) !important;
+    }
+    
+    .delrs {
+        right: 20px;
+        transform: translateX(0rem) !important;
+    }
+    
+    .dealers {
+        padding: 10px 43px;
+    }
+
+    .container {
+        display: none !important;
+    }
+
+    .capable {
+        flex-direction: column !important;
+        justify-items: center !important;
+        box-shadow: 0 0 100px 10px rgba(0, 25, 253, 0.589) !important;
+        width: auto !important;
+        min-height: 700px;
+    }
+
+    .capable p {
+        padding: 1rem;
+        background-color: rgba(5, 6, 40, 0.534);
+        width: 90% !important;
+        text-align: center !important;
+        margin: auto !important;
+    }
+
+    .capable h3 {
+        display: block !important;
+        background-color: rgba(5, 6, 40, 0.715);
+        font-size: 2rem;
+    }
+
+    .yaskawa {
+        background-image: url(../images/robot.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.073) !important;
+        background-position: top !important;
+        background-blend-mode: darken !important;
+    }
+
+    .plasma-table {
+        background-image: url(../images/plasma_table.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    }
+
+    .bandsaw {
+        background-image: url(../images/saw_1x1.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    } 
+    
+    .ironworker {
+        background-image: url(../images/ironworker_1x1.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    }
+
+    .bender {
+        background-image: url(../images/bender.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        
+    }
+
+    .roller {
+        background-image: url(../images/roller.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    }
+}
+
+@media only screen and (max-width: 559px) {
+    header,
+    header h1,
+    header img {
+        display: none;
+        color: hsla(195, 8%, 10%, 0);
+        background-color: hsla(195, 8%, 10%, 0);
+        position: absolute;
+    }
+
+    nav {
+        top: 0 !important;
+        position: relative;
+        background-image: url(../images/skid_high.jpg);
+        background-size: cover;
+        background-color: hsla(0, 0%, 0%, 0.626) !important;
+        background-blend-mode: darken;
+        background-position: left;
+    }
+
+    .nav {
+        display:none !important;
+        position: relative;
+        max-height: none !important;
+        min-height: 0 !important;
+        line-height: 2rem;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+        
+    }
+
+    .expand {
+        display:block !important;
+        position: relative;
+        max-height: none !important;
+        min-height: 0 !important;
+        line-height: 2rem;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+        padding: 0;
+    }
+
+    .vert-nav {
+        display: block !important;
+        justify-content: right;
+    }
+
+    .vert-nav p {
+        font-size: 2rem;
+    }
+    
+    .nav-button {
+        text-align: right;
+        font-size: 3rem;
+        color: rgb(191, 219, 240);
+        margin: 0;
+        margin-right: 16px;
+        padding-top: 12px;
+
+    }
+
+    .fa-bars {
+        font-size: 3rem;
+        color: rgb(191, 219, 240);
+        position: absolute;
+        margin-left: 0.5rem;
+    }
+
+    .fa-bars:hover {
+        cursor: pointer;
+    }
+
+    .home {
+        top: 0px !important;
+    }
+
+    .howdy h1 {
+        font-size: 5rem !important;
+    }
+
+    .buttons {
+        grid-column: 1/17;
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 1.5rem;
+        transform: translateY(3rem);
+    
+        
+    }
+    
+    .btn {
+        display: inline-flex;
+        padding: 10px 20px;
+        margin: 0;
+        background-color: rgb(1, 2, 66);
+        border: 4px solid rgb(231, 230, 255);
+        border-radius: 5px;
+        box-shadow: inset 0 0 5px 2px rgb(76, 0, 252);
+        transition: all .5s ease-out .1s;
+    }
+    
+    .btn:hover {
+        color: rgb(1, 2, 66);
+        background-color: rgb(231, 230, 255);
+        border: 4px solid rgb(1, 2, 66);
+        box-shadow: inset 0 0 5px 2px rgb(8, 0, 255);
+    }
+    
+    .cns {
+        transform: translateX(0rem) !important;
+    }
+    
+    .delrs {
+        right: 20px;
+        transform: translateX(0rem) !important;
+    }
+    
+    .dealers {
+        padding: 10px 43px;
+    }
+
+    .container {
+        display: none !important;
+    }
+
+    .capable {
+        flex-direction: column !important;
+        justify-items: center !important;
+        box-shadow: 0 0 100px 10px rgba(0, 25, 253, 0.589) !important;
+        width: auto !important;
+        min-height: 700px;
+    }
+
+    .capable p {
+        padding: 1rem;
+        background-color: rgba(5, 6, 40, 0.534);
+        width: 90% !important;
+        text-align: center !important;
+        margin: auto !important;
+    }
+
+    .capable h3 {
+        display: block !important;
+        background-color: rgba(5, 6, 40, 0.715);
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    .yaskawa {
+        background-image: url(../images/robot.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.073) !important;
+        background-position: center !important;
+        background-blend-mode: darken !important;
+    }
+
+    .plasma-table {
+        background-image: url(../images/plasma_table.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    }
+
+    .bandsaw {
+        background-image: url(../images/saw_1x1.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    } 
+    
+    .ironworker {
+        background-image: url(../images/ironworker_1x1.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    }
+
+    .bender {
+        background-image: url(../images/bender.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    }
+
+    .roller {
+        background-image: url(../images/roller.jpg) !important;
+        background-size: cover !important;
+        background-color: rgba(0, 0, 0, 0.365) !important;
+        background-blend-mode: darken !important;
+        background-position: center !important;
+    }
+
+    .contact {
+        padding-left: 10px !important;
+    }
+} 
+
+
+
 * {
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-       /* border: red solid 1px */
-    
-}
+}   
 
 html {
     font-size: 16px;
@@ -14,7 +406,6 @@ html {
     background-repeat: no-repeat;
     background-size: auto;
     /*z-index: 1;*/
- 
     background-image: url(../images/bottom_main-1.jpg);
     background-position: bottom;
     background-size: contain;
@@ -22,7 +413,6 @@ html {
 
 header {
     position: fixed;
-    
     text-align: center;
     width: 100%;
     max-height: 80px;
@@ -36,7 +426,6 @@ header {
     justify-content: space-between;
     display: flex;
 }
-
 
 header h1 {
 	display: flex;
@@ -70,8 +459,8 @@ nav {
     background-color: hsla(195, 8%, 10%, 1);
     z-index: 1;
     width: 100%;
-    max-height: 55px;
-    min-height: 55px;
+    /*max-height: 55px;
+    min-height: 55px;*/
 }
 
 .nav {
@@ -79,8 +468,8 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     margin: 0;
-    max-height: 55px;
-    min-height: 55px;
+    max-height: 40px;
+    min-height: 40px;
     
 }
 
@@ -88,20 +477,46 @@ nav {
    /* margin-right: 3vw;
     margin-left: 2.5vw; */
     font-size: 1rem;
-    letter-spacing: 0.12em;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
     text-align: center;
     color: hsl(201, 35%, 81%);
 
 }
 
-.nav:hover {
+.expand {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    max-height: 40px;
+    min-height: 40px;
+    
+}
+
+.expand li {
+   /* margin-right: 3vw;
+    margin-left: 2.5vw; */
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    color: hsl(201, 35%, 81%);
+
+}
+
+/*.nav:hover {
     background-color: hsla(195, 8%, 10%, 0.8);
+}*/
+
+.vert-nav {
+    display: none;
 }
 
 .home {
     display: block;
     position: relative;
-    top: 135px;
+    top: 70px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -118,28 +533,38 @@ nav {
 }
 
 .howdy {
-    display: flex;
-    flex-direction: column;
-    padding-top: 10vw;
-    justify-content: center;
-    transform: translateY(60px);
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-auto-rows: minmax(min-content, max-content);
+    padding-top: 5rem;
 }
 
 .howdy h1 {
-    font-size: 5vw;
+    grid-column: 2/16;
+    grid-row: 2;
+    margin: 0;
+    font-size: 6rem;
+    letter-spacing: 0.5rem;
     color: hsl(199, 61%, 93%);
-    transform: translateY(-4vw);
-    
     text-shadow: rgb(37, 0, 247) 2px 2px 10px,
                  rgb(0, 110, 255) -2px -2px 10px,
                  red -2px 2px 10px;
 }
 
+.howdy img {
+    grid-column: 8/10;
+    grid-row: 1;
+    width: 26rem;
+    height: auto;
+}
+
 .buttons {
+    grid-column: 1/17;
+    grid-row: 3;
     display: flex;
     justify-content: space-evenly;
-    font-size: 1.5vw;
-    transform: translateY(3vw);
+    font-size: 1.5rem;
+    transform: translateY(3rem);
 
     
 }
@@ -163,12 +588,12 @@ nav {
 }
 
 .cns {
-    transform: translateX(10vw);
+    transform: translateX(10rem);
 }
 
 .delrs {
     right: 20px;
-    transform: translateX(-10vw);
+    transform: translateX(-10rem);
 }
 
 .dealers {
@@ -176,23 +601,24 @@ nav {
 }
 
 .about {
-    padding: 2vw;
-    margin: 14vw 12vw 10vw 12vw;
+    padding: 2rem;
+    margin: 7rem 1rem 5rem 1rem;
     color:hsl(199, 61%, 93%);
     background-color: hsla(210, 100%, 5%, 0.8);
+    
 }
 
 .about h2,
 .facility h2 {
-    font-size: 1vw;
+    font-size: 2rem;
 }
 
 .about p,
 .capabilities p,
 .about a {
-    font-size: 1vw;
-    line-height: 2.5vw;
-    letter-spacing: 0.12vw;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.12rem;
     justify-content: left;
     font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
     
@@ -215,24 +641,25 @@ nav {
     display: inline-flex;
     flex-direction: column;
     color: hsl(199, 61%, 93%);
-    width: 70vw;
+    width: 80%;
     justify-content: center;
     /*height: 14vw; */
     overflow: hidden;
     transform: translateY(-100px);
     background-color: hsla(210, 100%, 7%, 0.8);
-    margin-top: 5vw;
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
+    margin-top: 5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     
 }
 
 .capable {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     /*flex-wrap: wrap;*/
-    justify-content: left;
-    
+    justify-self: center;
+    justify-content: space-between;
+    width: 80%;
     border-width: 2px 4px;
     border-color: rgb(232, 230, 252);
     border-style: solid;
@@ -246,29 +673,35 @@ nav {
     flex-direction: column;
     justify-content: left;
     justify-items: left;
-    flex-shrink: 2;
+    flex-shrink: 0;
+    width: 50%;
 }
 
 .container figcaption {
     color:rgb(214, 220, 248);
-    margin-top: 1vw;
+    margin-top: 1rem;
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 1.25rem;
 
 }
 
 .img-container {
     display: flex;
-    flex-shrink: 2;
-    max-width: 25vw;
-    height: 25vw;
+    flex-shrink: 0;
+    max-width: auto;
+    height: auto;
     border: 2px solid rgb(251, 251, 255);
 }
 
 .img-container img{
-    display: inline-flex;
     max-width: 100%;
     height: auto;
+}
+
+
+
+.capable h3 {
+    display: none;
 }
 
 .capable p {
@@ -276,9 +709,9 @@ nav {
     align-items: center;
     float: right;
     text-align: left;
-    font-size: 1.5vw;
-    line-height: 4vw;
-    width: 60vw;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    width: 50%;
 }
 
 footer {

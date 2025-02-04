@@ -10,7 +10,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
+        <script defer src="scripts/home.js"></script>
     </head>
     <body class="dealer-body">
         <header>
@@ -22,7 +24,7 @@
                 
         </header>
 		    <nav>
-                <ul class="nav">
+                <ul class="nav" id="toggled">
                     <li>|</li>
                     <li><a href="index.html">Home</a>
                     </li>
@@ -50,11 +52,12 @@
                     <li>|</li>
 
                 </ul>
+                <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
             </nav>
         <main class="dealer-main">
            <h1>Our Dealers</h1>
-
-           <table>
+          <div class="sk-dealers">
+           <table class="sk-table">
             <caption>
                 Saskatchewan Dealers
             </caption>
@@ -121,8 +124,10 @@
                 </tr>
             </tbody>
            </table>
-           
-           <table>
+          </div>
+          <div class="mb-dealers"> 
+           <table class="mb-table">
+            
             <caption>
                 Manitoba Dealers
             </caption>
@@ -135,7 +140,7 @@
                 </tr>
             </tbody>
            </table>
-           
+          </div>
            <table>
             <caption>
                 Alberta Dealers

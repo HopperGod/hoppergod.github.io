@@ -10,8 +10,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
     </head>
+    <script defer src="scripts/home.js"></script>
     <body class="udump-body">
         <header>
             <img class="logo" id="twe" src="resources/images/TWE_logo.png">
@@ -22,7 +24,7 @@
                 
         </header>
 		    <nav>
-                <ul class="nav">
+                <ul class="nav" id="toggled">
                     <li>|</li>
                     <li><a href="index.html">Home</a>
                     </li>
@@ -50,6 +52,7 @@
                     <li>|</li>
 
                 </ul>
+                <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
             </nav>
         <main class="udump-main">
            <h1>U-Dumps</h1>

@@ -49,6 +49,7 @@
 
 .transitions p {
     font-size: 1.5rem;
+    line-height: 3rem;
     padding-top: 1.5rem;
 
 }
@@ -60,17 +61,18 @@
     color:rgb(226, 226, 245);
     background-color: hsla(210, 100%, 5%, 0.9);
     margin: 10px;
-    margin-bottom: 150px;
-    padding-bottom: 30px;
+    margin-bottom: 50px;
+    padding-bottom: 5px;
     
     
   }
 
   .transitions img {
-    margin: 15px;
     width: auto;
-    height: 30rem;
+    height: 40rem;
     align-self: center;
+    border: 3px solid hsl(214, 96%, 90%);
+    box-shadow: 0 0 20px 2px rgba(0, 25, 253, 0.589);
   }
 
   .transitions ul {
@@ -78,10 +80,42 @@
 
   }
 
+#wide {
+    margin-right: 25px;
+}
 
+#close {
+    margin-left: 25px;
+}
 
+.aeration {
+    margin-bottom: 5rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: hsla(210, 100%, 8%, 0.833);
+}
 
+.graphics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
+.aeration p {
+    color:hsl(199, 61%, 93%);
+    font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+
+}
+
+.graphics img {
+    width: 30rem;
+    height: auto;
+    border: 3px solid hsl(214, 96%, 90%);
+    box-shadow: 0 0 20px 2px rgba(0, 25, 253, 0.589);
+}
 
 
 

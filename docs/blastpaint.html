@@ -10,7 +10,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
+        <script defer src="scripts/home.js"></script>
     </head>
     <body class="blast-body">
       <header>
@@ -20,9 +22,9 @@
           
         <img class="logo" id="worley-hoppers" src="resources/images/translucent_logo.png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
             
-    </header>
-    <nav>
-            <ul class="nav">
+      </header>
+      <nav>
+        <ul class="nav" id="toggled">
                 <li>|</li>
                 <li><a href="index.html">Home</a>
                 </li>
@@ -49,9 +51,10 @@
                 </li>
                 <li>|</li>
 
-            </ul>
-        </nav>
-        <main class="blast-main">
+        </ul>
+        <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
+      </nav>
+      <main class="blast-main">
            <h1>Sand Blast and Paint Repair</h1>
 
            <section class="intro">
@@ -88,8 +91,8 @@
            <br>
            <br>
            <br>
-        </main>
-        <footer>
+      </main>
+      <footer>
             <ul class="contact">
                 <li>Phone: (306)752-3635</li>
                 <li>Email: trworley@sasktel.net</li>
@@ -99,7 +102,7 @@
               <a target="_blank" href="https://www.facebook.com/p/TW-Enterprises-Worley-Hoppers-100049058207312/"><i class="fa-brands fa-facebook"></i></a>
               <a target="_blank" href="https://www.instagram.com/t.w.enterprises/"><i class="fa-brands fa-instagram"></i></a>
             </div>
-        </footer>
+      </footer>
 
     </body>
 </html>
