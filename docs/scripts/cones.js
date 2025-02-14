@@ -305,7 +305,7 @@ document.getElementById('selectionA').oninput = function() {
     document.getElementById('optionC2').setAttribute('disabled', ""),
     document.getElementById('optionC3').setAttribute('disabled', ""),
     document.getElementById('optionC4').setAttribute('disabled', ""),
-    document.getElementById('optionC7').setAttribute('disabled', ""),
+    document.getElementById('optionC6').setAttribute('disabled', ""),
     
     document.getElementById('selectionB').removeAttribute('disabled', ""),
     document.getElementById('optionB3').removeAttribute('disabled', ""),
@@ -313,7 +313,7 @@ document.getElementById('selectionA').oninput = function() {
     document.getElementById('optionB5').removeAttribute('disabled', ""),
     document.getElementById('optionB6').removeAttribute('disabled', ""),
     document.getElementById('optionC5').removeAttribute('disabled', ""),
-    document.getElementById('optionC6').removeAttribute('disabled', ""),
+    document.getElementById('optionC7').removeAttribute('disabled', ""),
     document.getElementById('optionE2').removeAttribute('disabled', ""),
     document.getElementById('optionE3').removeAttribute('disabled', ""),
     document.getElementById('optionF1').removeAttribute('disabled', ""),
@@ -546,7 +546,8 @@ document.getElementById('selectionB').oninput = function() {
 
   } else if (binSize.selectedIndex === 3 && coneSize.selectedIndex === 7 || binSize.selectedIndex === 4 && coneSize.selectedIndex === 7) {
     document.getElementById('optionC5').removeAttribute('disabled', ""),
-
+    document.getElementById('optionC7').removeAttribute('disabled', ""),
+    document.getElementById('optionC6').setAttribute('disabled', ""),
     document.getElementById('optionC0').removeAttribute('selected', ""),
     document.getElementById('optionD0').removeAttribute('selected', ""),
     document.getElementById('optionE0').removeAttribute('selected', ""),
@@ -935,300 +936,450 @@ document.getElementById('selectionF').oninput = function() {
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "176",
     document.getElementById('legNumber').innerHTML = "8";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 1 && skidType.selectedIndex === 2) {
     document.getElementById('weightNumber').innerHTML = "2280",
     document.getElementById('bPNumber').innerHTML = "29",
     document.getElementById('capacityNumber').innerHTML = "176",
     document.getElementById('legNumber').innerHTML = "8";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 1 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "2560",
     document.getElementById('bPNumber').innerHTML = "23",
     document.getElementById('capacityNumber').innerHTML = "176",
     document.getElementById('legNumber').innerHTML = "8";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 2 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "1783",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "234",
     document.getElementById('legNumber').innerHTML = "8";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 2 && skidType.selectedIndex === 2) {
     document.getElementById('weightNumber').innerHTML = "2400",
     document.getElementById('bPNumber').innerHTML = "44",
     document.getElementById('capacityNumber').innerHTML = "234",
     document.getElementById('legNumber').innerHTML = "8";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 2 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "2720",
     document.getElementById('bPNumber').innerHTML = "30",
     document.getElementById('capacityNumber').innerHTML = "234",
     document.getElementById('legNumber').innerHTML = "8";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 3 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "2235",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "303",
     document.getElementById('legNumber').innerHTML = "10";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 3 && skidType.selectedIndex === 2) {
     document.getElementById('weightNumber').innerHTML = "2895",
     document.getElementById('bPNumber').innerHTML = "placeholder",
     document.getElementById('capacityNumber').innerHTML = "303",
     document.getElementById('legNumber').innerHTML = "10";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 3 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "3240",
     document.getElementById('bPNumber').innerHTML = "placeholder",
     document.getElementById('capacityNumber').innerHTML = "303",
     document.getElementById('legNumber').innerHTML = "10";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 2 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "3370",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
-  } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 2 && skidType.selectedIndex === 2) {
+  } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 2 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "3927",
     document.getElementById('bPNumber').innerHTML = "35",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 3 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "3370",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   }  else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 3 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "3927",
     document.getElementById('bPNumber').innerHTML = "40",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 4 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "3370",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 4 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "4810",
     document.getElementById('bPNumber').innerHTML = "31",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 5 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "3370",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 4 && binSize.selectedIndex === 5 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "4810",
     document.getElementById('bPNumber').innerHTML = "35",
     document.getElementById('capacityNumber').innerHTML = "398",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 5 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "2965",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "549",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 5 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "4195",
     document.getElementById('bPNumber').innerHTML = "38",
     document.getElementById('capacityNumber').innerHTML = "549",
     document.getElementById('legNumber').innerHTML = "12";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 3 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "5252",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 3 && skidType.selectedIndex === 3) {
     document.getElementById('weightNumber').innerHTML = "6405",
     document.getElementById('bPNumber').innerHTML = "46",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 3 && skidType.selectedIndex === 4) {
     document.getElementById('weightNumber').innerHTML = "6405",
     document.getElementById('bPNumber').innerHTML = "46",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 4 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "6805",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 4 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "7590",
     document.getElementById('bPNumber').innerHTML = "40",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 4 && skidType.selectedIndex === 6) {
     document.getElementById('weightNumber').innerHTML = "7590",
     document.getElementById('bPNumber').innerHTML = "40",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 5 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "6805",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 5 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "7590",
     document.getElementById('bPNumber').innerHTML = "40",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 6 && binSize.selectedIndex === 5 && skidType.selectedIndex === 6) {
     document.getElementById('weightNumber').innerHTML = "7590",
     document.getElementById('bPNumber').innerHTML = "45",
     document.getElementById('capacityNumber').innerHTML = "692",
     document.getElementById('legNumber').innerHTML = "14";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 3 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "7250",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Pads Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Pads Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Pads Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 3 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "9350",
-    document.getElementById('bPNumber').innerHTML = "41",
+    document.getElementById('bPNumber').innerHTML = "42",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Skid Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 3 && skidType.selectedIndex === 7) {
     document.getElementById('weightNumber').innerHTML = "9695",
-    document.getElementById('bPNumber').innerHTML = "placeholder",
+    document.getElementById('bPNumber').innerHTML = "41",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Skid Iso Low View.png";
+   
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 4 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "7250",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Pads Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Pads Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Pads Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 4 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "9350",
-    document.getElementById('bPNumber').innerHTML = "42",
-    document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
-  } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 4 && skidType.selectedIndex === 7) {
-    document.getElementById('weightNumber').innerHTML = "9695",
     document.getElementById('bPNumber').innerHTML = "47",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Skid Iso Low View.png";
+    
+  } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 4 && skidType.selectedIndex === 7) {
+    document.getElementById('weightNumber').innerHTML = "9695",
+    document.getElementById('bPNumber').innerHTML = "placeholder",
+    document.getElementById('capacityNumber').innerHTML = "1043",
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Skid Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 5 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "7830",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Pads Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Pads Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Pads Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 5 && skidType.selectedIndex === 7) {
     document.getElementById('weightNumber').innerHTML = "10250",
     document.getElementById('bPNumber').innerHTML = "39",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Skid Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 6 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "7830",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Pads Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Pads Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Pads Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 7 && binSize.selectedIndex === 6 && skidType.selectedIndex === 7) {
     document.getElementById('weightNumber').innerHTML = "10250",
     document.getElementById('bPNumber').innerHTML = "43",
     document.getElementById('capacityNumber').innerHTML = "1043",
-    document.getElementById('legNumber').innerHTML = "16";
-
+    document.getElementById('legNumber').innerHTML = "16",
+    document.getElementById('firstSlide').src="resources/images/slide photos/24 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/24 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/24 w Skid Iso Low View.png";
+    
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 2 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "8905",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1464",
     document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 2 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "11375",
     document.getElementById('bPNumber').innerHTML = "44",
     document.getElementById('capacityNumber').innerHTML = "1464",
     document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 3 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "9820",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1464",
     document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 3 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "12750",
     document.getElementById('bPNumber').innerHTML = "41",
     document.getElementById('capacityNumber').innerHTML = "1464",
     document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 4 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "10665",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1464",
     document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 4 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "13990",
     document.getElementById('bPNumber').innerHTML = "38",
     document.getElementById('capacityNumber').innerHTML = "1464",
     document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 5 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "10665",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1464",
-    document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('legNumber').innerHTML = "18",
+    document.getElementById('firstSlide').src="resources/images/slide photos/2708 09 w Pads Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/2708 09 w Pads Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/2708 09 w Pads Iso Low View.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 5 && skidType.selectedIndex === 5) {
     document.getElementById('weightNumber').innerHTML = "13990",
     document.getElementById('bPNumber').innerHTML = "42",
     document.getElementById('capacityNumber').innerHTML = "1464",
-    document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('legNumber').innerHTML = "18",
+    document.getElementById('firstSlide').src="resources/images/slide photos/2708 09 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/2708 09 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/2708 09 w Skid Iso Low View.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 6 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "11630",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "1464",
-    document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('legNumber').innerHTML = "18",
+    document.getElementById('firstSlide').src="resources/images/slide photos/2708 09 w Pads Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/2708 09 w Pads Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/2708 09 w Pads Iso Low View.png";
 
   } else if (coneSize.selectedIndex === 8 && binSize.selectedIndex === 6 && skidType.selectedIndex === 7) {
     document.getElementById('weightNumber').innerHTML = "15500",
     document.getElementById('bPNumber').innerHTML = "47",
     document.getElementById('capacityNumber').innerHTML = "1464",
-    document.getElementById('legNumber').innerHTML = "18";
+    document.getElementById('legNumber').innerHTML = "18",
+    document.getElementById('firstSlide').src="resources/images/slide photos/2708 09 w Skid Front View.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/2708 09 w Skid Iso View.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/2708 09 w Skid Iso Low View.png";
 
   } else if (coneSize.selectedIndex === 9 && skidType.selectedIndex === 1) {
     document.getElementById('weightNumber').innerHTML = "21256",
     document.getElementById('bPNumber').innerHTML = "N/A",
     document.getElementById('capacityNumber').innerHTML = "2750",
     document.getElementById('legNumber').innerHTML = "22";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   } else if (coneSize.selectedIndex === 9 && skidType.selectedIndex === 7) {
     document.getElementById('weightNumber').innerHTML = "29439",
     document.getElementById('bPNumber').innerHTML = "48.8",
     document.getElementById('capacityNumber').innerHTML = "2750",
     document.getElementById('legNumber').innerHTML = "22";
+    document.getElementById('firstSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('secondSlide').src="resources/images/slide photos/disclaimer.png",
+    document.getElementById('thirdSlide').src="resources/images/slide photos/disclaimer.png";
 
   }
 };

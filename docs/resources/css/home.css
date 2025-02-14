@@ -15,7 +15,7 @@
         position: relative;
         background-image: url(../images/skid_high.jpg);
         background-size: cover;
-        background-color: hsla(0, 0%, 0%, 0.626) !important;
+        background-color: hsla(0, 0%, 0%, 0.747) !important;
         background-blend-mode: darken;
     }
 
@@ -263,8 +263,12 @@
         top: 0px !important;
     }
 
+    .howdy img {
+        width: 24rem !important;
+    }
+
     .howdy h1 {
-        font-size: 5rem !important;
+        font-size: 4.5rem !important;
     }
 
     .buttons {
@@ -309,6 +313,8 @@
     .dealers {
         padding: 10px 43px;
     }
+
+    
 
     .container {
         display: none !important;

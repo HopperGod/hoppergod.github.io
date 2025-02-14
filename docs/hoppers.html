@@ -10,7 +10,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon">
         <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <script defer src="scripts/cones.js"></script> 
         <script defer src="scripts/home.js"></script>
     </head>
@@ -23,8 +26,8 @@
             <img class="logo" id="worley-hoppers" src="resources/images/translucent_logo.png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
                 
         </header>
-		    <nav>
-                <ul class="nav">
+		<nav>
+            <ul class="nav" id="toggled">
                     <li>|</li>
                     <li><a href="index.html">Home</a>
                     </li>
@@ -51,8 +54,9 @@
                     </li>
                     <li>|</li>
 
-                </ul>
-            </nav>
+            </ul>
+            <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
+        </nav>
       
         <main class="hopper-main">
             <h1>Worley Hoppers <br> Any cone for any need</h1>
@@ -78,7 +82,7 @@
             <section id="program">
             
                 <section id="selectors">
-                    <section class="selector">
+                    <section class="selector" id="selectorA">
                         <label for="selectionA">Cone Sizes</label>
                         <select id="selectionA">
                             <option value="Nothing Selected" id="optionA0">--Please Select An Option--</option>
@@ -94,7 +98,7 @@
                         </select>
                     </section>
                     
-                    <section class="selector">
+                    <section class="selector" id="selectorB">
                         <label for="selectionB">Bin Tier Size</label>
                         <select disabled id="selectionB">
                             <option value="Nothing Selected" id="optionB0">--Please Select An Option--</option>
@@ -108,7 +112,7 @@
                         </select>
                     </section>
                     
-                    <section class="selector">
+                    <section class="selector" id="selectorC">
                         <label for="selectionC">Skid Type</label>
                         <select disabled id="selectionC">
                             <option value="Nothing Selected" id="optionC0">--Please Select An Option--</option>
@@ -122,7 +126,7 @@
                         </select>
                     </section>
 
-                    <section class="selector">
+                    <section class="selector" id="selectorD">
                         <label for="selectionD">Chute Type</label>
                         <select disabled id="selectionD">
                             <option value="Nothing Selected" id="optionD0">--Please Select An Option--</option>
@@ -132,8 +136,8 @@
                     </section>
 
 
-                    <section class="selector">
-                        <label for="selectionE">Aeration Option</label>
+                    <section class="selector" id="selectorE">
+                        <label for="selectionE">Aeration</label>
                         <select disabled id="selectionE">
                             <option value="Nothing Selected" id="optionE0">--Please Select An Option--</option>
                             <option value="No Air" id="optionE1">No Air</option>
@@ -142,7 +146,7 @@
                         </select>
                     </section>
 
-                    <section class="selector">
+                    <section class="selector" id="selectorF">
                         <label for="selectionF">Inlet Sizes</label>
                         <select disabled id="selectionF">
                             <option value="Nothing Selected" id="optionF0">--Please Select An Option--</option>
@@ -169,17 +173,17 @@
                         <!-- Full-width images with number and caption text -->
                         <div class="mySlides fade">
                         <div class="numbertext">1 / 3</div>
-                        <img id="firstSlide" src="resources/images/slide photos/welding_leg.jpg" style="width:100%">
+                        <img id="firstSlide" src="resources/images/slide photos/LOGO(1).png" style="width:100%">
                         </div>
                     
                         <div class="mySlides fade">
                         <div class="numbertext">2 / 3</div>
-                        <img id="secondSlide" src="resources/images/slide photos/welding_sheet.jpg" style="width:100%">
+                        <img id="secondSlide" src="resources/images/slide photos/LOGO(1).png" style="width:100%">
                         </div>
                     
                         <div class="mySlides fade">
                         <div class="numbertext">3 / 3</div>
-                        <img id="thirdSlide" src="resources/images/slide photos/welding-air-2.jpg" style="width:100%">
+                        <img id="thirdSlide" src="resources/images/slide photos/LOGO(1).png" style="width:100%">
                         </div>
                     
                         <!-- Next and previous buttons -->
@@ -222,7 +226,7 @@
             </section>
 
             <section class="redirect">
-              <p>If you have any questions about anything we'd be happy to take your call or email. <br><br> If you don't have any questions, find a dealer closest to you.</p>
+              <p>If you have any questions about anything we'd be happy to take your call or email. <br> If you don't have any questions, find a dealer closest to you.</p>
               <a href="dealers.html">
                 <div class="order-btn">
                   <h3>Order Now</h3>
