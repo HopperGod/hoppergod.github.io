@@ -9,40 +9,57 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon">
         <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script defer src="scripts/home.js"></script> 
     </head>
     <body class="home-body">
-        <header>
-              <h1> T.W. Enterprises</h1>
-              <br>
-              <img class="logo" src="resources/images/LOGO(1).png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
-                
-        </header>
-		    <nav>
-                <ul class="nav">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    <li><a href="hoppers.html">Worley Hoppers</a>
-                    </li>
-                    <li><a href="udumps.html">Udumps</a>
-                    </li>
-                    <li><a target="_blank" href="https://mthd.ca/">Method Eng.</a>
-                    </li>
-                    <li><a href="blastpaint.html">Blast & Paint</a>
-                    </li>
-                    <li><a href="dealers.html">Dealers</a>
-                    </li>
-                    <li><a href="careers.html">Careers</a>
-                    </li>
-                    <li><a href="gallery.html">Gallery</a>
-                    </li>
+      <header>
+        <img class="logo" id="twe" src="resources/images/TWE_logo.png">
+        
+        <h1> T.W. Enterprises | Worley Hoppers</h1>
+          
+        <img class="logo" id="worley-hoppers" src="resources/images/translucent_logo.png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
+            
+      </header>
+      <nav>
+            <ul class="nav" id="toggled">
+                <li>|</li>
+                <li><a href="index.html">Home</a>
+                </li>
+                <li>|</li>
+                <li><a href="hoppers.html">Worley Hoppers</a>
+                </li>
+                <li>|</li>
+                <li><a href="udumps.html">U-dumps</a>
+                </li>
+                <li>|</li>
+                <li><a href="transitions.html">Transitions</a>
+                </li>
+                <li>|</li>
+                <li><a href="blastpaint.html">Blast & Paint</a>
+                </li>
+                <li>|</li>
+                <li><a href="dealers.html">Dealers</a>
+                </li>
+                <li>|</li>
+                <li><a href="careers.html">Careers</a>
+                </li>
+                <li>|</li>
+                <li><a href="gallery.html">Gallery</a>
+                </li>
+                <li>|</li>
 
-                </ul>
-        </nav>
-        <main class="home">
+            </ul>
+          <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
+      </nav>
+      <main class="home">
           
           <section class="howdy">
-            <h1>Quality and Efficiency</h1>
+            <img src="resources/images/translucent_logo.png">
+            <h1>The Worley Way</h1>
             <div class="buttons">
               <a class="cns" href="hoppers.html"><h3 class="btn cones">Browse cones</h3></a>
               <br>
@@ -52,18 +69,17 @@
           
           <section class="about">
             <h2>About our Company</h2>
-            <p>We have been in business for over 30 years and are dedicated to creating high quality products and giving superior service. We supply over <strong>40 dealers</strong>
-             across Alberta, Saskatchewan, and Manitoba.  Our talented, long-term staff have demonstrated repeatedly that we're capable of building over 1500 hopper cones annually.
-             Ranging from 12ft in diameter to 33ft, their isn't a hopper cone we can't build for you reguardless of your preffered type of grain bin. All of our hopper cones are designed 
-             by our partnered company <a target="_blank" href="https://mthd.ca/">Method Engineering & Design inc.</a></p>
+            <p>We have proudly served our customers for over 30 years, delivering high-quality products and exceptional service. 
+               With a network of over 50 dealers across Alberta, Saskatchewan, and Manitoba, we are a trusted name in the industry. 
+               Thanks to our skilled and experienced team, we are capable of producing over 1,500 hopper cones annually. 
+               All our hopper cones are designed by the team at <a target="_blank" href="https://mthd.ca/">Method Engineering & Design Inc.</a></p>
           </section>
 
           <section class="capabilities">
             <div class="facility">
-              <h2>Capabilities of our Facilities</h2>
-              <p>Our 36,000 sq foot welding facility is one of many buildings on our newly expanded 10 acre worksite. We use high quality equipment to ensure a perfect job
-                 is finished efficiently. Having a variety of work stations ensures every task in completed efficiently, easily, and safly. Here are some of the machines we use
-                  to get the job done.
+              <h2>Capabilities and Machines</h2>
+              <p>Our 36,000-square-foot welding facility is just one of several buildings on our recently expanded 15-acre worksite.
+                 Equipped with high-quality machinery, we ensure every job is completed with precision and efficiency. Below are our machines in operation:
               </p>
             </div>
             
@@ -74,21 +90,24 @@
                   <img class="yask-img"  src="resources/images/robot.jpg">
                 </figure>
               </div>
-            
-              <p>The Yaskawa AR3120 offers precise high-speed performance for arc welding projects. It's ideal for large parts, such as automotive frames and agricultural machinery.
-                 Programed by one of our staff members, we have it working on pre-made skids and hopper cone chutes.
-              </p>
+              
+                <h3>Yaskawa AR3120 Welding Robot</h3>
+                <p>Our state-of-the-art Yaskawa robot delivers precise, high-speed performance. It is best suited for repetitive parts, such as the skid sections on our hopper cones. 
+                 With an impressive 12-foot arm length, it can easily handle even the largest skid sections, including those on our 33-foot hopper cones.
+                </p>
+              
             </div>
 
             <div class="capable plasma-table">
               <div class="container">
-                <figcaption>Pinnacle High Definition Plasma</figcaption>
+                <figcaption>Hypertherm CNC Plasma Table</figcaption>
                 <figure class="img-container plas-img">
                     <img src="resources/images/plasma_table.jpg">
                 </figure>
               </div>
-
-              <p>400 AMP Plasma capable of cutting up to 3 inch material. Bevel Head capable of cutting up to 45 degrees. Equipped with a chuck for cutting tube and HSS.</p>
+              <h3>Hypertherm CNC Plasma Table</h3>
+              <p>This 400 Amp high-definition plasma table is capable of cutting material up to 3” thick. The rotating torch head allows us to cut bevels on plate up to 45°.
+                 With a workable cutting area of 8x12 feet, we can handle a wide variety of projects.</p>
 
             </div>
 
@@ -99,6 +118,7 @@
                     <img src="resources/images/saw_1x1.jpg">
                   </figure>
                 </div>
+                <h3>Omada VT5063</h3>
                 <p>Horizontal Band Saw capable of cutting up to 20 inch diameter metal tubing with a 60 degree swing in either direction.</p>
             </div>
             
@@ -109,6 +129,7 @@
                     <img src="resources/images/ironworker_1x1.jpg">
                   </figure>
                 </div>
+                <h3>Geka Ironworker</h3>
                 <p>Multipurpose machine used for punching holes and shearing angle iron, flat bar, as well as round bar.</p>
 
             </div>
@@ -120,6 +141,7 @@
                     <img src="resources/images/bender.jpg">
                   </figure>
                 </div>
+                <h3>Fabmaster Horizontal Bender</h3>
                 <p>Great for bending small parts and tight boxes. Capacity ranges from 14 gauge to 1/2 plate.</p>
 
             </div>
@@ -131,10 +153,11 @@
                     <img src="resources/images/roller.jpg">
                   </figure>
                 </div>
+                <h3>DAVI 4-Roll</h3>
                 <p>Rolls plate, cylinders, and cones up to 6 feet wide. Thickness ranges from 14 gauge up to 1 inch depending on width.</p>
             </div>
 
-            <div class="capable decoiler">
+           <!-- <div class="capable decoiler">
                 <div class="container">
                   <figcaption>Decoiler</figcaption>
                   <figure class="img-container coil-img">
@@ -142,7 +165,7 @@
                   </figure>
                 </div>
                 <p>Built oursleves, the decoiler spins out up to 15,000 pound coils into flat sheets.</p>
-            </div>
+            </div> -->
 
 
           </section>
@@ -155,8 +178,8 @@
           <br>
           
 
-        </main>
-        <footer>
+      </main>
+      <footer>
             <ul class="contact">
                 <li>Phone: (306)752-3635</li>
                 <li>Email: trworley@sasktel.net</li>
@@ -166,7 +189,7 @@
               <a target="_blank" href="https://www.facebook.com/p/TW-Enterprises-Worley-Hoppers-100049058207312/"><i class="fa-brands fa-facebook"></i></a>
               <a target="_blank" href="https://www.instagram.com/t.w.enterprises/"><i class="fa-brands fa-instagram"></i></a>
             </div>
-        </footer>
+      </footer>
 
     </body>
 </html>

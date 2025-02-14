@@ -1,3 +1,49 @@
+@media only screen and (max-width: 1200px) {
+  .blast-main {
+    padding-top: 50px !important;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .gallery {
+    gap: 10px !important;
+  }
+
+  figure {
+    margin: 5px !important;
+    box-shadow: 0 0 24px 1px rgba(0, 25, 253, 0.589) !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .blast-main h1 {
+    font-size: 3rem !important;
+  }
+
+  .intro p{
+    font-size: 1.2rem !important;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .blast-main {
+    background-image: url(../images/blast_rims_2-vert.jpg) !important;
+  }
+
+  .intro {
+    margin-top: 10rem !important;
+  }
+}
+
+
+
+
 .blast-body {
     margin: 0;
     width: 100%;
@@ -21,7 +67,7 @@
   }
   
   .blast-main h1 {
-      font-size: 5vw;
+      font-size: 5rem;
       color: hsl(199, 61%, 93%);
       text-shadow: rgb(37, 0, 247) 2px 2px 10px,
                    rgb(0, 110, 255) -2px -2px 10px,
@@ -29,22 +75,22 @@
   }
 
   .intro {
-    margin-top: 3vw;
+    margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3vw;
-    padding-top: 1vw;
-    width: 54vw;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+    width: 85%;
     background-color: hsla(210, 100%, 5%, 0.5);
 
 }
  
   .intro p {
     margin-top: 0;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     color:rgb(226, 226, 245);
     font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif;
-    line-height: 3vw;
+    line-height: 3rem;
 }
 
 .gallery {
@@ -58,9 +104,9 @@
   font-family: "Bai Jamjuree", Helvetica, sans-serif;
   gap: 20px;
   justify-items: center;
-  margin-left: 2vw;
-  margin-right: 2vw;
-  margin-bottom: 4vw;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 4rem;
   
 }
 

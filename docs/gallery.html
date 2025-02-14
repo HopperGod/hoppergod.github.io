@@ -11,35 +11,51 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
+        <script defer src="scripts/home.js"></script>
     </head>
     <body class="gallery-body">
         <header>
-              <h1> T.W. Enterprises</h1>
-              <br>
-              <img class="logo" src="resources/images/LOGO(1).png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
+            <img class="logo" id="twe" src="resources/images/TWE_logo.png">
+            
+            <h1> T.W. Enterprises | Worley Hoppers</h1>
+              
+            <img class="logo" id="worley-hoppers" src="resources/images/translucent_logo.png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
                 
         </header>
-		<nav>
-                <ul class="nav">
+		    <nav>
+                <ul class="nav" id="toggled">
+                    <li>|</li>
                     <li><a href="index.html">Home</a>
                     </li>
+                    <li>|</li>
                     <li><a href="hoppers.html">Worley Hoppers</a>
                     </li>
-                    <li><a href="udumps.html">Udumps</a>
+                    <li>|</li>
+                    <li><a href="udumps.html">U-dumps</a>
                     </li>
-                    <li><a target="_blank" href="https://mthd.ca/">Method Eng.</a>
+                    <li>|</li>
+                    <li><a href="transitions.html">Transitions</a>
                     </li>
+                    <li>|</li>
                     <li><a href="blastpaint.html">Blast & Paint</a>
                     </li>
+                    <li>|</li>
                     <li><a href="dealers.html">Dealers</a>
                     </li>
+                    <li>|</li>
                     <li><a href="careers.html">Careers</a>
                     </li>
+                    <li>|</li>
                     <li><a href="gallery.html">Gallery</a>
                     </li>
+                    <li>|</li>
 
                 </ul>
+                <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
             </nav>
         <main class="gallery-main">
            <h1>Gallery</h1>
@@ -56,132 +72,126 @@
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/IMG_2577.png"></figure>
-                <figcaption>33 foot cone vs a 14 foot cone</figcaption>
+                <figure><img src="resources/images/gallery_photos/IMG_2577.png"></figure>
             </div>
             
             <div class="item">
-                <figure><img src="resources/images/gallery photos/cone_teams_2.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/cone_teams_2.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/close_wld_sheet.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/close_wld_sheet.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/Rack&Pinion_Handle.png"></figure>
                 <figcaption></figcaption>
             </div>
             
             <div class="item">
-                <figure><img src="resources/images/dylan_sheets.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/cone_teams_3.jpg"></figure>
                 <figcaption></figcaption>
             </div>
-            
+             
             <div class="item">
-                <figure><img src="resources/images/gallery photos/cone_teams_3.jpg"></figure>
-                <figcaption>Our production line</figcaption>
+                <figure><img src="resources/images/gallery_photos/welding_sheet.jpg"></figure>
+                <figcaption></figcaption>
             </div>
-            
+
             <div class="item">
-                <figure><img src="resources/images/happy_shane.jpg"></figure>
-                <figcaption>A happy and fulfilled worker</figcaption>
+                <figure><img src="resources/images/Inverted_V_air.png"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/happy_shane.jpg"></figure>
+                <figcaption></figcaption>
             </div>
             
             <div class="item">
                 <figure><img src="resources/images/welding_leg.jpg"></figure>
                 <figcaption></figcaption>
             </div>
-            
+
             <div class="item">
-                <figure><img src="resources/images/gallery photos/welding_sheet.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/close_helpers.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/Inverted_V_air.png"></figure>
-                <figcaption>Inverted V air</figcaption>
-            </div>
-            
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/kobe_kohl.jpg"></figure>
-                <figcaption>The inside band being tacked to the cone</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/inside_outside_band.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/x_air.png"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/close_helpers.jpg"></figure>
-                <figcaption>Welding robot being programmed for a new task</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/x_air.png"></figure>
-                <figcaption>The X-air</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/kobe_plasma.jpg"></figure>
-                <figcaption>The inside band being cut to length</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/new_standing_leg.jpg"></figure>
-                <figcaption>A leg of the cone being leveled and tacked</figcaption>
-            </div>
-            
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/close_table.jpg"></figure>
-                <figcaption>The plasma table carrying out a preprogramed task</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/decoiling.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/inside_outside_band.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/Outside_weld.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/kobe_plasma.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/cone_lift.jpg"></figure>
-                <figcaption>Painted cones being taken outside</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/Rack&Pinion_Handle.png"></figure>
-                <figcaption>Rack & Pinion handle</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/band-welding.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/new_standing_leg.jpg"></figure>
                 <figcaption></figcaption>
             </div>
             
             <div class="item">
-                <figure><img src="resources/images/gallery photos/gutter.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/close_table.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/toolingband.jpg"></figure>
-                <figcaption>Tacking the bottom of the sheet metal to the bottom of the band</figcaption>
-            </div>
-
-            <div class="item">
-                <figure><img src="resources/images/gallery photos/skid_high.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/decoiling.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/angle_brace_welding.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/Outside_weld.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
             <div class="item">
-                <figure><img src="resources/images/gallery photos/close_skid_high.jpg"></figure>
+                <figure><img src="resources/images/gallery_photos/cone_lift.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/dylan_sheets.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+            
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/gutter.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/toolingband.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/band-welding.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/skid_high.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/angle_brace_welding.jpg"></figure>
+                <figcaption></figcaption>
+            </div>
+
+            <div class="item">
+                <figure><img src="resources/images/gallery_photos/close_skid_high.jpg"></figure>
                 <figcaption></figcaption>
             </div>
 
