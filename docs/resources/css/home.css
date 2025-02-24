@@ -733,12 +733,12 @@ footer {
 
 .contact {
     display: inline-block;
-   
+    
 }
 
 .contact li {
     color: hsl(199, 61%, 93%);
-    
+    font-size: 1rem;
 }
 
 .contact li,
