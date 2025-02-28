@@ -613,7 +613,7 @@ nav {
 
 .about {
     padding: 2rem;
-    margin: 7rem 1rem 5rem 1rem;
+    margin: 7rem 1rem 3rem 1rem;
     color:hsl(199, 61%, 93%);
     background-color: hsla(210, 100%, 5%, 0.8);
     
@@ -641,6 +641,11 @@ nav {
 
 .about a:hover {
     color: rgb(50, 205, 192);
+}
+
+#yard {
+    max-width: 90%;
+    margin-bottom: 3rem;
 }
 
 .capabilities {
