@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>T.W. Enterprises</title>
+        <link rel="stylesheet"  href="resources\css\home.css">
+  <link rel="stylesheet" href="resources/css/private-only.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/cfbfbd4dfd.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script defer src="scripts/home.js"></script> 
+    </head>
+    <body class="home-body">
+      <header>
+        <img class="logo" id="twe" src="resources/images/TWE_logo.png">
+        
+        <h1> T.W. Enterprises | Worley Hoppers</h1>
+          
+        <img class="logo" id="worley-hoppers" src="resources/images/translucent_logo.png" alt="the logo of worley hoppers which appears as a W covering a hopper bottom to make the W look like it's a part of the supports of the cone">
+            
+      </header>
+      <nav>
+            <ul class="nav" id="toggled">
+                <li>|</li>
+                <li><a href="index.html">Home</a>
+                </li>
+                <li>|</li>
+                <li><a href="hoppers.html">Worley Hoppers</a>
+                </li>
+                <li>|</li>
+                <li><a href="udumps.html">U-dumps</a>
+                </li>
+                <li>|</li>
+                <li><a href="transitions.html">Transitions</a>
+                </li>
+                <li>|</li>
+                <li><a href="blastpaint.html">Blast & Paint</a>
+                </li>
+                <li>|</li>
+                <li><a href="dealers.html">Dealers</a>
+                </li>
+                <li>|</li>
+                <li><a href="careers.html">Careers</a>
+                </li>
+                <li>|</li>
+                <li><a href="gallery.html">Gallery</a>
+                </li>
+                <li>|</li>
+
+            </ul>
+          <div class="vert-nav"><i onclick="myFunction()" class="fa-solid fa-bars"></i><p class="nav-button">Worley Hoppers</p><div></div></div>
+      </nav>
+      <main class="home">
+          
+          <section class="cone_folders">
+            <ul>
+                <li>21</li>
+                <li>24</li>
+                <li><a href="27.html">27</a></li>
+            </ul>
+          </section>
+          
+          
+
+          
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          
+
+          <!-- QR code for quick access to this private page -->
+          <section class="qr-section" aria-label="QR code link">
+            <h2>Quick access</h2>
+            <p>Scan this QR code with your phone to open this private page:</p>
+            <div class="qr-wrap">
+              <img id="private-qr" alt="QR code linking to private page" src="" />
+            </div>
+            <p class="qr-note">If the image doesn't load, visit <a id="private-link" href="private.html">private.html</a></p>
+          </section>
+
+          <!-- Second QR: open a specific slideshow image inside this page -->
+          <section class="qr-section image-qr" aria-label="QR to open slide image">
+            <h2>Quick image</h2>
+            <p>Scan this QR to open a sample slideshow image on this page:</p>
+            <div class="qr-wrap">
+              <img id="image-qr-img" alt="QR code linking to open an image on this page" src="" />
+            </div>
+            <p class="qr-note">Or open directly: <a id="image-link" href="#">open image</a></p>
+          </section>
+
+          <!-- Simple lightbox to display the target image -->
+          <div id="qr-lightbox" class="lightbox" style="display:none;">
+            <div class="lightbox-backdrop"></div>
+            <div class="lightbox-content">
+              <button id="lightbox-close" class="lightbox-close">Close</button>
+              <img id="lightbox-img" src="" alt="slideshow image" />
+            </div>
+          </div>
+
+      </main>
+      <footer>
+            <ul class="contact">
+                <li>Phone: (306)752-3635</li>
+                <li>Email: trworley@sasktel.net</li>
+                <li>Location: <a target="_blank" href="https://www.google.com/maps/place/T.W.+Enterprises%2F+Worley+Hoppers/@52.8225916,-104.6279593,12.75z/data=!4m6!3m5!1s0x530212bd808eb9ab:0xb17455a674cbe644!8m2!3d52.7826919!4d-104.5985183!16s%2Fg%2F1tnpf2fg?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D">10 minutes South of Melfort, SK</a></li>
+            </ul>
+            <div class="social">
+              <a target="_blank" href="https://www.facebook.com/p/TW-Enterprises-Worley-Hoppers-100049058207312/"><i class="fa-brands fa-facebook"></i></a>
+              <a target="_blank" href="https://www.instagram.com/t.w.enterprises/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+      </footer>
+
+    <script>
+      // Build an absolute URL to this page when possible. If the page is opened via file://,
+      // fall back to the relative path 'private.html'.
+      (function() {
+        var qrImg = document.getElementById('private-qr');
+        var link = document.getElementById('private-link');
+        var imgQr = document.getElementById('image-qr-img');
+        var imgLink = document.getElementById('image-link');
+        var lightbox = document.getElementById('qr-lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        var lightboxClose = document.getElementById('lightbox-close');
+
+  // Target image inside resources/images/slide photos (confirmed path)
+  var targetImage = 'resources/images/slide photos/24 w Pads Front View.png';
+
+        var url;
+        try {
+          if (location.protocol === 'file:') {
+            url = 'private.html';
+          } else {
+            url = location.origin + location.pathname;
+          }
+        } catch (e) {
+          url = 'private.html';
+        }
+
+        // Main page QR
+        var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(url);
+        if (qrImg) qrImg.src = qrUrl;
+        if (link) link.href = url;
+
+        // Second QR: link to this page with ?img=<encoded-path>
+        var imagePageUrl = url + (url.indexOf('?') === -1 ? '?' : '&') + 'img=' + encodeURIComponent(targetImage);
+        var imgQrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(imagePageUrl);
+        if (imgQr) imgQr.src = imgQrUrl;
+        if (imgLink) imgLink.href = imagePageUrl;
+
+        // Lightbox handlers
+        function openLightboxFor(src) {
+          if (!lightbox || !lightboxImg) return;
+          // encodeURI so spaces and special chars are safe for the src attribute
+          lightboxImg.src = encodeURI(src);
+          lightbox.style.display = 'block';
+        }
+
+        function closeLightbox() {
+          if (!lightbox) return;
+          lightbox.style.display = 'none';
+          lightboxImg.src = '';
+        }
+
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        if (lightbox) lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
+
+        // On load, check query string for img parameter
+        try {
+          var params = new URLSearchParams(location.search);
+          var imgParam = params.get('img');
+          if (imgParam) {
+            // If the param is a relative path, try to resolve it relative to this page
+            var resolved = imgParam;
+            // If it looks like a relative resources path, use as-is
+            openLightboxFor(resolved);
+          }
+        } catch (e) { /* ignore */ }
+
+        // Also allow the direct 'open image' link to open the lightbox in-page
+        if (imgLink) imgLink.addEventListener('click', function(e){ e.preventDefault(); openLightboxFor(targetImage); });
+
+      })();
+    </script>
+    <style>
+      /* Ensure the QR section sits above the footer and is visible on small screens */
+      .qr-section {
+        position: relative;
+        z-index: 20;            /* sit above footer if footer has low z-index */
+        margin: 2rem auto 10rem; /* add bottom space so the footer doesn't overlap */
+        max-width: 320px;
+        padding: 1rem;
+        background: rgba(255,255,255,0.03);
+        border-radius: 6px;
+        text-align: center;
+      }
+
+      .qr-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .image-qr { margin-top: 1rem; }
+
+      /* Lightbox styles */
+      .lightbox { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 9999; }
+      .lightbox-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.75); }
+      .lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; padding: 1rem; z-index: 10000; }
+      .lightbox-content img { max-width: 100%; max-height: 80vh; display: block; margin: 0 auto; border-radius: 6px; }
+      .lightbox-close { position: absolute; top: -10px; right: -10px; z-index:10001; background: #fff; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+
+      @media (min-width: 900px) {
+        .qr-section { margin-bottom: 6rem; }
+      }
+    </style>
+
+    </body>
+</html>

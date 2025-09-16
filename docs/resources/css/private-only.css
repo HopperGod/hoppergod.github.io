@@ -1,0 +1,40 @@
+/* Minimal CSS applied only to private.html and 27.html to force a white background for easier editing */
+html, body {
+  background: #ffffff !important;
+  color: #000 !important;
+}
+
+/* Make main content area clear and remove background images */
+.main, .home, body.home-body {
+  background: #ffffff !important;
+}
+
+/* Ensure any background images are hidden on these pages */
+* {
+  background-image: none !important;
+}
+
+/* Adjust footer contrast */
+footer, .contact, .social {
+  background: transparent !important;
+  color: #000 !important;
+}
+
+/* Outline elements inside <main> so you can see layout boundaries while editing */
+main * {
+  outline: 1px solid rgba(255,0,0,0.9) !important;
+}
+
+/* Ensure the cone_folders section is not tucked under the header */
+.cone_folders {
+  position: relative;
+  z-index: 50; /* sit above header if header uses lower z-index */
+  margin-top: 6rem !important; /* push down so it's visible */
+  background: rgba(255,255,255,0.95) !important; /* make it stand out while editing */
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .cone_folders { margin-top: 8rem !important; }
+}
