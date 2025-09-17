@@ -160,47 +160,24 @@
                     
                 </section>
                 
-                <section id="theShow">
+                                <section id="theShow">
 
-                                <!-- Slideshow container -->
-                    <div class="slideshow-container">
-                        
-                    <!-- <div class="my Slides defaltSlide">
-                            <div class="numbertext"></div>
-                            <img src="resources/images/LOGO(1).png" style="width:100%;">
-                            <div class="text"></div>
-                            </div>
-                        -->
-                        <!-- Full-width images with number and caption text -->
-                        <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img id="firstSlide" src="resources/images/slide photos/LOGO(1).png" style="width:100%">
-                        </div>
-                    
-                        <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img id="secondSlide" src="resources/images/slide photos/LOGO(1).png" style="width:100%">
-                        </div>
-                    
-                        <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img id="thirdSlide" src="resources/images/slide photos/LOGO(1).png" style="width:100%">
-                        </div>
-                    
-                        <!-- Next and previous buttons -->
-                        <a id="left" class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a id="right" class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <br>
-                    
-                    <!-- The dots/circles -->
-                    <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>
+                                        <!-- Three.js viewer: displays a 3D preview of the selected hopper configuration. -->
+                                        <div id="threejs-viewer" style="width:100%;height:420px;background:#222;border-radius:6px;overflow:hidden;">
+                                            <!-- Fallback message shown only if JS or WebGL isn't available -->
+                                            <noscript>
+                                                <div style="color:#fff;padding:1rem;">This preview requires JavaScript. Please enable JavaScript to view the 3D model.</div>
+                                            </noscript>
+                                            <div id="threejs-fallback" style="color:#fff;padding:1rem;display:none;">WebGL not available — preview disabled.</div>
+                                        </div>
 
-                </section>
+                                        <!-- Controls hint -->
+                                        <div style="margin-top:.5rem; color:#333; font-size:.9rem;">Drag to rotate. Scroll to zoom.</div>
+
+                                        <!-- Load the three-viewer module which will initialize the viewer and expose an updateModelForSelections() function -->
+                                        <script type="module" src="scripts/three-viewer.js" defer></script>
+
+                                </section>
 
                 <section id="information">
                     <section id="weightInfo">

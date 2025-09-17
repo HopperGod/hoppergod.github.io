@@ -5855,6 +5855,28 @@ function updateOutput() {
   }
 }
 
+// --- Viewer integration: if three-viewer is present, update the 3D model when selectors change ---
+function tryUpdate3DViewer() {
+  if (typeof window.updateModelForSelections === 'function') {
+    try {
+      window.updateModelForSelections();
+    } catch (e) {
+      console.warn('three-viewer update error', e);
+    }
+  }
+}
+
+// Attach listener to all selectors to trigger the viewer update when selections change
+try {
+  const selectorElements = ['selectionA','selectionB','selectionC','selectionD','selectionE','selectionF'];
+  selectorElements.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', tryUpdate3DViewer);
+  });
+  // initial attempt to update in case selections are already set
+  window.addEventListener('load', tryUpdate3DViewer);
+} catch (e) { /* ignore in older environments */ }
+
 function onSelectionChange(index) {
   resetDropdownsFrom(index);
 
