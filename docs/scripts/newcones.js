@@ -82,7 +82,9 @@ const coneToAirCompatibility = {
 };
 
 function resetSlides() {
-  slides.forEach(slide => slide.src = PLACEHOLDER_IMG);
+  slides.forEach(slide => {
+    if (slide) slide.src = PLACEHOLDER_IMG;
+  });
 }
 
 function resetOutput() {
@@ -5844,7 +5846,7 @@ function updateOutput() {
     outputs.capacity.textContent = match.capacity;
     outputs.leg.textContent = match.leg;
     slides.forEach((slide, i) => {
-      slide.src = match.images[i] || PLACEHOLDER_IMG;
+      if (slide) slide.src = match.images[i] || PLACEHOLDER_IMG;
     });
   } else {
     outputs.weight.textContent = 'N/A';
@@ -5865,17 +5867,7 @@ function tryUpdate3DViewer() {
     }
   }
 }
-
-// Attach listener to all selectors to trigger the viewer update when selections change
-try {
-  const selectorElements = ['selectionA','selectionB','selectionC','selectionD','selectionE','selectionF'];
-  selectorElements.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('change', tryUpdate3DViewer);
-  });
-  // initial attempt to update in case selections are already set
-  window.addEventListener('load', tryUpdate3DViewer);
-} catch (e) { /* ignore in older environments */ }
+// Note: viewer is updated only when all selections are made (see onSelectionChange)
 
 function onSelectionChange(index) {
   resetDropdownsFrom(index);
@@ -5985,6 +5977,8 @@ function onSelectionChange(index) {
 
   if (allSelectionsMade()) {
     updateOutput();
+    // update the 3D viewer (if present) only after outputs are updated
+    tryUpdate3DViewer();
   }
 }
 
