@@ -11,6 +11,10 @@ let stlLoader = null;
 let loaderOverlay = null;
 let hudDiv = null; // small status HUD in the corner
 let currentLoadingName = null;
+let wireframeOn = false;
+let autoRotate = false;
+let autoRotateSpeed = 0.4; // degrees per frame-ish scale
+let savedCameraState = null;
 
 let _threeReady = false;
 let _threeReadyPromise = null;
@@ -111,6 +115,56 @@ function init() {
   hudDiv.textContent = '3D viewer ready';
   container.appendChild(hudDiv);
 
+  // control row below HUD (buttons)
+  const ctrlRow = document.createElement('div');
+  ctrlRow.style.position = 'absolute';
+  ctrlRow.style.right = '8px';
+  ctrlRow.style.top = '44px';
+  ctrlRow.style.display = 'flex';
+  ctrlRow.style.gap = '6px';
+  ctrlRow.style.zIndex = '12';
+
+  const btn = (label, title) => {
+    const b = document.createElement('button');
+    b.textContent = label;
+    b.title = title || label;
+    b.style.padding = '6px 8px';
+    b.style.borderRadius = '6px';
+    b.style.border = 'none';
+    b.style.background = 'rgba(255,255,255,0.06)';
+    b.style.color = '#fff';
+    b.style.cursor = 'pointer';
+    b.onmouseenter = () => b.style.background = 'rgba(255,255,255,0.12)';
+    b.onmouseleave = () => b.style.background = 'rgba(255,255,255,0.06)';
+    return b;
+  };
+
+  const wireBtn = btn('Wire', 'Toggle wireframe');
+  wireBtn.onclick = () => { toggleWireframe(); };
+  ctrlRow.appendChild(wireBtn);
+
+  const rotBtn = btn('Rotate', 'Toggle auto-rotate');
+  rotBtn.onclick = () => { toggleAutoRotate(); rotBtn.textContent = autoRotate ? 'Rotating' : 'Rotate'; };
+  ctrlRow.appendChild(rotBtn);
+
+  const resetBtn = btn('Reset', 'Reset camera view');
+  resetBtn.onclick = () => { resetCamera(); };
+  ctrlRow.appendChild(resetBtn);
+
+  // small speed input
+  const speedInput = document.createElement('input');
+  speedInput.type = 'range';
+  speedInput.min = '0';
+  speedInput.max = '2';
+  speedInput.step = '0.05';
+  speedInput.value = String(autoRotateSpeed);
+  speedInput.title = 'Auto-rotate speed';
+  speedInput.style.width = '80px';
+  speedInput.oninput = (e) => { autoRotateSpeed = parseFloat(e.target.value); };
+  ctrlRow.appendChild(speedInput);
+
+  container.appendChild(ctrlRow);
+
   window.addEventListener('resize', onWindowResize);
   animate();
   console.debug('three-viewer: init complete');
@@ -151,8 +205,47 @@ function onWindowResize() {
 
 function animate() {
   requestAnimationFrame(animate);
+  if (autoRotate && currentMesh) {
+    // rotate the current mesh slowly on Y axis
+    currentMesh.rotation.y += 0.01 * autoRotateSpeed;
+  }
   if (controls) controls.update();
   if (renderer && scene && camera) renderer.render(scene, camera);
+}
+
+function toggleWireframe() {
+  wireframeOn = !wireframeOn;
+  if (!currentMesh) return;
+  currentMesh.traverse((m) => {
+    if (m.material) {
+      if (Array.isArray(m.material)) m.material.forEach(mm => mm.wireframe = wireframeOn);
+      else m.material.wireframe = wireframeOn;
+    }
+  });
+}
+
+function toggleAutoRotate() {
+  autoRotate = !autoRotate;
+  if (hudDiv) hudDiv.textContent = autoRotate ? 'Auto-rotate: ON' : 'Ready';
+}
+
+function resetCamera(preset) {
+  // preset can be 'front'|'top'|'iso' or undefined
+  if (!camera) return;
+  if (!preset) {
+    camera.position.set(0, 2, 6);
+    camera.lookAt(0, 1, 0);
+  } else if (preset === 'front') {
+    camera.position.set(0, 1.5, 4.5);
+    camera.lookAt(0, 1, 0);
+  } else if (preset === 'top') {
+    camera.position.set(0, 6, 0.01);
+    camera.lookAt(0, 0, 0);
+  } else if (preset === 'iso') {
+    camera.position.set(3, 2.5, 3);
+    camera.lookAt(0, 1, 0);
+  }
+  if (controls) controls.update();
 }
 
 function clearCurrentMesh() {
