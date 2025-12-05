@@ -2566,9 +2566,9 @@ function updateOutput() {
       capacity: '692',
       leg: '14',
       images: [
-        'resources/images/slide photos/21 w 3skid Front View.png',
-        'resources/images/slide photos/21 w 3skid Iso View.png',
-        'resources/images/slide photos/21 w 3skid Top View.png'
+        'resources/images/slide photos/21 w 3skid Front View.jpg',
+        'resources/images/slide photos/21 w 3skid Iso View.jpg',
+        'resources/images/slide photos/21 w 3skid Top View.jpg'
       ]
     },
     '6-3-3-2-1-4': {
