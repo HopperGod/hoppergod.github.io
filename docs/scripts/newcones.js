@@ -560,9 +560,9 @@ function updateOutput() {
       capacity: '234',
       leg: '8',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15 w 2skid Front View.jpg',
+        'resources/images/slide photos/15 w 2skid Iso View.jpg',
+        'resources/images/slide photos/15 w 2skid Top View.jpg'
       ]
     },
     '2-2-2-1-2-2': {
@@ -626,9 +626,9 @@ function updateOutput() {
       capacity: '234',
       leg: '8',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15 w 2skid Front View.jpg',
+        'resources/images/slide photos/15 w 2skid Iso View.jpg',
+        'resources/images/slide photos/15 w 2skid Top View.jpg'
       ]
     },
     '2-3-2-1-2-2': {
