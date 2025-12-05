@@ -1435,9 +1435,9 @@ function updateOutput() {
       capacity: '398',
       leg: '12',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/18 w 3skid Front View.jpg',
+        'resources/images/slide photos/18 w 3skid Iso View.jpg',
+        'resources/images/slide photos/18 w 3skid Top View.jpg'
       ]
     },
     '4-2-3-2-1-4': {
@@ -1546,9 +1546,9 @@ function updateOutput() {
       capacity: '398',
       leg: '12',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/18 w 3skid Front View.jpg',
+        'resources/images/slide photos/18 w 3skid Iso View.jpg',
+        'resources/images/slide photos/18 w 3skid Top View.jpg'
       ]
     },
     '4-3-3-2-1-4': {
