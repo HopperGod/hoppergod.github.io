@@ -5939,8 +5939,10 @@ function onSelectionChange(index) {
           if (![0, 1, 2].includes(idx)) opt.disabled = true;
         });
       } else if ([6, 7].includes(coneIndex)) {
-        // 21 ft, 24 ft — all inlet sizes
-        // No restrictions
+        // 21 ft, 24 ft — 18, 24, 28 inch
+        Array.from(inletSelect.options).forEach((opt, idx) => {
+          if (![0, 1, 2, 3].includes(idx)) opt.disabled = true;
+        });
       } else if ([8, 9].includes(coneIndex)) {
         // 27 ft, 33 ft — only 28 inch
         Array.from(inletSelect.options).forEach((opt, idx) => {
