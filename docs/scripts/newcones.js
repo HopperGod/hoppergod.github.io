@@ -5848,6 +5848,7 @@ function updateOutput() {
     outputs.bp.textContent = match.bp;
     outputs.capacity.textContent = match.capacity;
     outputs.leg.textContent = match.leg;
+    outputs.height.textContent = skidIndex === 1 ? coneHeightsNoSkid[coneIndex] : coneHeightsWithSkid[coneIndex];
     slides.forEach((slide, i) => {
       slide.src = match.images[i] || PLACEHOLDER_IMG;
     });
@@ -5856,6 +5857,7 @@ function updateOutput() {
     outputs.bp.textContent = 'N/A';
     outputs.capacity.textContent = 'N/A';
     outputs.leg.textContent = 'N/A';
+    outputs.height.textContent = 'N/A';
     resetSlides();
   }
 }
@@ -5966,24 +5968,6 @@ function onSelectionChange(index) {
 
   if (index + 1 < selects.length) {
     selects[index + 1].disabled = false;
-  }
-
-  // Update height when cone or skid changes
-  if (index === 0 || index === 2) {
-    const coneIndex = selects[0].selectedIndex;
-    const skidIndex = selects[2].selectedIndex;
-    if (coneIndex > 0) {
-      if (skidIndex === 1) {
-        outputs.height.textContent = coneHeightsNoSkid[coneIndex] || '0';
-      } else if (skidIndex > 1) {
-        outputs.height.textContent = coneHeightsWithSkid[coneIndex] || '0';
-      } else {
-        // Skid not selected yet, show no skid height as default
-        outputs.height.textContent = coneHeightsNoSkid[coneIndex] || '0';
-      }
-    } else {
-      outputs.height.textContent = '0';
-    }
   }
 
   if (allSelectionsMade()) {
