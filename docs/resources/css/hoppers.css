@@ -429,6 +429,8 @@ option {
 #heightNumber {
   background-color: white;
   color: black;
+  min-width: 60px;
+  text-align: center;
 }
 
 .know {
