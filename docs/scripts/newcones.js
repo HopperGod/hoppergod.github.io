@@ -7,7 +7,8 @@ const chuteTypes = ['--Please Select An Option--', 'Standard Pull', 'Rack & Pini
 const airTypes = ['--Please Select An Option--', 'No Air', 'Inverted V', 'X-Air'];
 const inletSizes = ['--Please Select An Option--', '18 inch', '24 inch', '28 inch', 'Not Applicable'];
 
-const coneHeights = ['', '14', '15', '15.83', '18', '19', '21', '24', '27', '33'];
+const coneHeightsWithSkid = ['', '6.79', '7.33', '8.12', '8.79', '9.54', '9.96', '11.06', '12.06', '13.94'];
+const coneHeightsNoSkid = ['', '6.46', '7.01', '7.80', '8.46', '9.21', '9.65', '10.76', '11.76', '13.64'];
 
 const selects = [
   document.getElementById('selectionA'),
@@ -123,8 +124,6 @@ function updateOutput() {
   const chuteIndex = selects[3].selectedIndex;
   const airIndex = selects[4].selectedIndex;
   const inletIndex = selects[5].selectedIndex;
-
-  outputs.height.textContent = coneHeights[coneIndex] || '0';
 
   const configKey = `${coneIndex}-${binIndex}-${skidIndex}-${chuteIndex}-${airIndex}-${inletIndex}`;
 
@@ -5967,6 +5966,24 @@ function onSelectionChange(index) {
 
   if (index + 1 < selects.length) {
     selects[index + 1].disabled = false;
+  }
+
+  // Update height when cone or skid changes
+  if (index === 0 || index === 2) {
+    const coneIndex = selects[0].selectedIndex;
+    const skidIndex = selects[2].selectedIndex;
+    if (coneIndex > 0) {
+      if (skidIndex === 1) {
+        outputs.height.textContent = coneHeightsNoSkid[coneIndex] || '0';
+      } else if (skidIndex > 1) {
+        outputs.height.textContent = coneHeightsWithSkid[coneIndex] || '0';
+      } else {
+        // Skid not selected yet, show no skid height as default
+        outputs.height.textContent = coneHeightsNoSkid[coneIndex] || '0';
+      }
+    } else {
+      outputs.height.textContent = '0';
+    }
   }
 
   if (allSelectionsMade()) {
