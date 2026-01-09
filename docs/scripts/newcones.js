@@ -7,6 +7,8 @@ const chuteTypes = ['--Please Select An Option--', 'Standard Pull', 'Rack & Pini
 const airTypes = ['--Please Select An Option--', 'No Air', 'Inverted V', 'X-Air'];
 const inletSizes = ['--Please Select An Option--', '18 inch', '24 inch', '28 inch', 'Not Applicable'];
 
+const coneHeights = ['', '14', '15', '15.83', '18', '19', '21', '24', '27', '33'];
+
 const selects = [
   document.getElementById('selectionA'),
   document.getElementById('selectionB'),
@@ -20,7 +22,8 @@ const outputs = {
   weight: document.getElementById('weightNumber'),
   bp: document.getElementById('bPNumber'),
   capacity: document.getElementById('capacityNumber'),
-  leg: document.getElementById('legNumber')
+  leg: document.getElementById('legNumber'),
+  height: document.getElementById('heightNumber')
 };
 
 const slides = [
@@ -90,6 +93,7 @@ function resetOutput() {
   outputs.bp.textContent = '0';
   outputs.capacity.textContent = '0';
   outputs.leg.textContent = '0';
+  outputs.height.textContent = '0';
   resetSlides();
 }
 
@@ -119,6 +123,8 @@ function updateOutput() {
   const chuteIndex = selects[3].selectedIndex;
   const airIndex = selects[4].selectedIndex;
   const inletIndex = selects[5].selectedIndex;
+
+  outputs.height.textContent = coneHeights[coneIndex] || '0';
 
   const configKey = `${coneIndex}-${binIndex}-${skidIndex}-${chuteIndex}-${airIndex}-${inletIndex}`;
 
