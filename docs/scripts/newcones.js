@@ -5940,7 +5940,7 @@ function onSelectionChange(index) {
         Array.from(inletSelect.options).forEach((opt, idx) => {
           if (idx !== 0 && idx !== 1) opt.disabled = true;
         });
-      } else if ([2, 4, 5].includes(coneIndex)) {
+      } else if ([2, 3, 4, 5].includes(coneIndex)) {
         // 15 ft, 15'10 Behlen, 18 ft, 19 ft — 18 or 24 inch
         Array.from(inletSelect.options).forEach((opt, idx) => {
           if (![0, 1, 2].includes(idx)) opt.disabled = true;
