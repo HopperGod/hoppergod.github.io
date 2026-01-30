@@ -33,6 +33,16 @@
     min-width: 625px;
     margin-bottom: 0;
   }
+
+  .ab-dealers {
+    overflow-x: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .ab-table {
+    min-width: 625px;
+    margin-bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 568px) {
