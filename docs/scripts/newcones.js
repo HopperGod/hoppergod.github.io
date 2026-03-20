@@ -35,6 +35,10 @@ const slides = [
 
 const PLACEHOLDER_IMG = "resources/images/slide photos/disclaimer.png";
 
+function resetSlides() {
+  slides.forEach(slide => slide.src = PLACEHOLDER_IMG);
+}
+
 const coneToBinCompatibility = {
     1: [2, 3],
     2: [2, 3],
@@ -84,10 +88,6 @@ const coneToAirCompatibility = {
   8: [1, 2, 3],
   9: [1, 2, 3]
 };
-
-function resetSlides() {
-  slides.forEach(slide => slide.src = PLACEHOLDER_IMG);
-}
 
 function resetOutput() {
   outputs.weight.textContent = '0';
@@ -996,9 +996,9 @@ function updateOutput() {
       capacity: '398',
       leg: '12',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/18_5-6_NS_SP_NA Front View.jpg',
+        'resources/images/slide photos/18_5-6_NS_SP_NA Iso View.jpg',
+        'resources/images/slide photos/18_5-6_NS_SP_NA Top View.jpg'
       ]
     },
     '4-2-1-2-1-4': {
@@ -1107,9 +1107,9 @@ function updateOutput() {
       capacity: '398',
       leg: '12',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/18_5-6_NS_SP_NA Front View.jpg',
+        'resources/images/slide photos/18_5-6_NS_SP_NA Iso View.jpg',
+        'resources/images/slide photos/18_5-6_NS_SP_NA Top View.jpg'
       ]
     },
     '4-3-1-2-1-4': {
@@ -3822,9 +3822,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24 w 4skid Top View.jpg'
       ]
     },
     '7-3-5-1-2-1': {
@@ -3976,9 +3976,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24 w 4skid Top View.jpg'
       ]
     },
     '7-4-5-1-2-1': {
@@ -4130,9 +4130,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24 w 4skid Top View.jpg'
       ]
     },
     '7-3-7-1-2-1': {
@@ -4285,9 +4285,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24 w 4skid Top View.jpg'
       ]
     },
     '7-4-7-1-2-1': {
@@ -4750,9 +4750,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24 w 4skid Top View.jpg'
       ]
     },
     '7-5-7-1-2-1': {
@@ -4905,9 +4905,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24 w 4skid Top View.jpg'
       ]
     },
     '7-6-7-1-2-1': {
