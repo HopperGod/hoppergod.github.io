@@ -918,9 +918,9 @@ function updateOutput() {
       capacity: '303',
       leg: '10',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Top View.jpg'
       ]
     },
     '3-1-3-1-1-4': {
