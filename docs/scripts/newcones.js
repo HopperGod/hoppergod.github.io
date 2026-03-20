@@ -1484,9 +1484,9 @@ function updateOutput() {
       capacity: '398',
       leg: '12',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Front View.jpg',
+        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Top View.jpg'
       ]
     },
     '4-2-3-2-2-2': {
@@ -1595,9 +1595,9 @@ function updateOutput() {
       capacity: '398',
       leg: '12',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Front View.jpg',
+        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Top View.jpg'
       ]
     },
     '4-3-3-2-2-2': {
@@ -5757,9 +5757,9 @@ function updateOutput() {
       capacity: '2750',
       leg: '22',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/gallery_photos/33.jpg',
+        'resources/images/gallery_photos/33.jpg',
+        'resources/images/gallery_photos/33.jpg'
       ]
     },
     '9-7-1-2-3-3': {
