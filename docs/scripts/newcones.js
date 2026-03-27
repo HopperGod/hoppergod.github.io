@@ -33,7 +33,7 @@ const slides = [
   document.getElementById('thirdSlide')
 ];
 
-const PLACEHOLDER_IMG = "resources/images/slide photos/disclaimer.png";
+const PLACEHOLDER_IMG = "resources/images/slide photos/ConeBuilderDefault.jpg";
 
 function resetSlides() {
   slides.forEach(slide => slide.src = PLACEHOLDER_IMG);
