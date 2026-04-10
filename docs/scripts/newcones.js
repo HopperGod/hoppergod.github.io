@@ -37,6 +37,15 @@ const slides = [
 const PLACEHOLDER_IMG = "resources/images/slide photos/ConeBuilderDefault.jpg";
 const ANGLE_BRACE_IMG = "resources/images/slide photos/Angle_Braces_14-19.jpg"; // Replace with actual filename
 const GUSSET_BRACE_IMG = "resources/images/slide photos/Gusset_14-19.jpg"; // Replace with actual filename
+const BRACE_IMG = {
+  angle: ANGLE_BRACE_IMG,
+  gusset: GUSSET_BRACE_IMG
+};
+
+const OPPOSITE_BRACE_IMG = {
+  gusset: ANGLE_BRACE_IMG,
+  angle: GUSSET_BRACE_IMG
+};
 
 function resetSlides() {
   slides.forEach(slide => slide.src = PLACEHOLDER_IMG);
@@ -63,14 +72,14 @@ const coneToBinCompatibility = {
     '3-1': [1, 2, 3],
     '4-2': [1, 2, 3],
     '4-3': [1, 2, 3],
-    '5-5': [1, 3],
-    '6-3': [1, 3, 4],
-    '6-4': [1, 5, 6],
-    '6-5': [1, 5, 6],
-    '7-3': [1, 5, 7],
-    '7-4': [1, 5, 7],
-    '7-5': [1, 7],
-    '7-6': [1, 7],
+    '5-2': [1, 3],
+    '5-3': [1, 3],
+    '5-4': [1, 5],
+    '5-5': [1, 5],
+    '6-5': [1, 3],
+    '7-3': [1, 3, 4],
+    '7-4': [1, 5, 6],
+    '7-5': [1, 5, 6],
     '8-3': [1, 5, 7],
     '8-4': [1, 5, 7],
     '8-5': [1, 7],
@@ -5871,9 +5880,13 @@ function updateOutput() {
     slides.forEach((slide, i) => {
       slide.src = match.images[i] || PLACEHOLDER_IMG;
     });
-    // Fourth slide: show the opposite brace type
-    const fourthImg = match.braceType === 'gusset' ? ANGLE_BRACE_IMG : GUSSET_BRACE_IMG;
-    slides[3].src = fourthImg;
+
+    // Fourth slide: show the opposite brace type if the selected config defines a braceType.
+    const braceType = match.braceType ? String(match.braceType).toLowerCase() : '';
+    const fourthImg = braceType ? (OPPOSITE_BRACE_IMG[braceType] || PLACEHOLDER_IMG) : PLACEHOLDER_IMG;
+    if (slides[3]) {
+      slides[3].src = fourthImg;
+    }
   } else {
     outputs.weight.textContent = 'N/A';
     outputs.bp.textContent = 'N/A';
