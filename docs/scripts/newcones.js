@@ -572,10 +572,11 @@ function updateOutput() {
       bp: '44',
       capacity: '234',
       leg: '8',
+      braceType: 'angle',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-2-2-2-2-1': {
@@ -595,10 +596,11 @@ function updateOutput() {
       bp: '44',
       capacity: '234',
       leg: '8',
+      braceType: 'angle',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-2-2-2-2-2': {
@@ -639,10 +641,11 @@ function updateOutput() {
       bp: '44',
       capacity: '234',
       leg: '8',
+      braceType: 'angle',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-3-2-2-2-1': {
@@ -650,6 +653,7 @@ function updateOutput() {
       bp: '44',
       capacity: '234',
       leg: '8',
+      braceType: 'gusset',
       images: [
         'resources/images/slide photos/15 w 2skid Front View.jpg',
         'resources/images/slide photos/15 w 2skid Iso View.jpg',
@@ -661,10 +665,11 @@ function updateOutput() {
       bp: '44',
       capacity: '234',
       leg: '8',
+      braceType: 'angle',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-3-2-2-2-2': {
@@ -683,10 +688,11 @@ function updateOutput() {
       bp: '30',
       capacity: '234',
       leg: '8',
+      braceType: 'angle',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15_5-6_TS_SP_NA Front View.jpg',
+        'resources/images/slide photos/15_5-6_TS_SP_NA Iso View.jpg',
+        'resources/images/slide photos/15_5-6_TS_SP_NA Top View.jpg'
       ]
     },
     '2-2-3-2-1-4': {
@@ -893,10 +899,11 @@ function updateOutput() {
       bp: 'placeholder',
       capacity: '303',
       leg: '10',
+      braceType: 'gusset',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/16_5-6-DS-RP_NA Front View.jpg',
+        'resources/images/slide photos/16_5-6-DS-RP_NA Iso View.jpg',
+        'resources/images/slide photos/16_5-6-DS-RP_NA Top View.jpg'
       ]
     },
     '3-1-2-1-2-1': {
@@ -1004,10 +1011,414 @@ function updateOutput() {
       bp: 'placeholder',
       capacity: '303',
       leg: '10',
+      braceType: 'gusset',
+      images: [
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Top View.jpg'
+      ]
+    },
+    //16 footers
+    '4-2-1-1-1-4': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
       images: [
         'resources/images/slide photos/disclaimer.png',
         'resources/images/slide photos/disclaimer.png',
         'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-1-2-1-4': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-1-1-2-1': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-1-2-2-1': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-1-1-2-2': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-1-2-2-2': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-1-1-1-4': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-1-2-1-4': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-1-1-2-1': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-1-2-2-1': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-1-1-2-2': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-1-2-2-2': {
+      weight: '2235',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-2-1-1-4': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-2-2-1-4': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      braceType: 'gusset',
+      images: [
+        'resources/images/slide photos/16_5-6-DS-RP_NA Front View.jpg',
+        'resources/images/slide photos/16_5-6-DS-RP_NA Iso View.jpg',
+        'resources/images/slide photos/16_5-6-DS-RP_NA Top View.jpg'
+      ]
+    },
+    '4-2-2-1-2-1': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-2-2-2-1': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-2-1-2-2': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-2-2-2-2': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      braceType: 'gusset',
+      images: [
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Top View.jpg'
+      ]
+    },
+    '4-3-2-1-1-4': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-2-2-1-4': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      braceType: 'gusset',
+      images: [
+        'resources/images/slide photos/16_5-6-DS-RP_NA Front View.jpg',
+        'resources/images/slide photos/16_5-6-DS-RP_NA Iso View.jpg',
+        'resources/images/slide photos/16_5-6-DS-RP_NA Top View.jpg'
+      ]
+    },
+    '4-3-2-1-2-1': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-2-2-2-1': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-2-1-2-2': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-2-2-2-2': {
+      weight: '2895',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      braceType: 'gusset',
+      images: [
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Top View.jpg'
+      ]
+    },
+    '4-2-3-1-1-4': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-3-2-1-4': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-3-1-2-1': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-3-2-2-1': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-3-1-2-2': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-2-3-2-2-2': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      braceType: 'gusset',
+      images: [
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Top View.jpg'
+      ]
+    },
+    '4-3-3-1-1-4': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-3-2-1-4': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-3-1-2-1': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-3-2-2-1': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-3-1-2-2': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
+    },
+    '4-3-3-2-2-2': {
+      weight: '3240',
+      bp: 'placeholder',
+      capacity: '303',
+      leg: '10',
+      braceType: 'gusset',
+      images: [
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Top View.jpg'
       ]
     },
     //18 footers
@@ -2076,10 +2487,11 @@ function updateOutput() {
       bp: '38',
       capacity: '549',
       leg: '12',
+      braceType: 'gusset',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/19_8_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/19_8_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/19_8_TS_RP_VA_24 Top View.jpg'
       ]
     },
     '6-5-3-1-3-1': {
