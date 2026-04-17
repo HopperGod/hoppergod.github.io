@@ -271,6 +271,15 @@
 
 }
 
+.intro a {
+    color: rgb(162, 155, 255);
+    font-family: "Radio Canada", Georgia, 'Times New Roman', Times, serif; ;
+}
+
+.intro a:hover {
+    color: rgb(49, 84, 199);
+}
+
 aside {
   display: flex;
   justify-content: center;
