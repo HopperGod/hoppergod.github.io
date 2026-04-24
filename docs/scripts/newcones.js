@@ -7,8 +7,8 @@ const chuteTypes = ['--Please Select An Option--', 'Standard Pull', 'Rack & Pini
 const airTypes = ['--Please Select An Option--', 'No Air', 'Inverted V', 'X-Air'];
 const inletSizes = ['--Please Select An Option--', '18 inch', '24 inch', '28 inch', 'Not Applicable'];
 
-const coneHeightsWithSkid = ['', '6.79', '7.33', '8.12', 'TBD', '8.79', '9.54', '9.96', '11.06', '12.06', '13.94'];
-const coneHeightsNoSkid = ['', '6.46', '7.01', '7.80', 'TBD', '8.46', '9.21', '9.65', '10.76', '11.76', '13.64'];
+const coneHeightsWithSkid = ['', '6.79', '7.33', '8.12', '8.12', '8.79', '9.54', '9.96', '11.06', '12.06', '13.94'];
+const coneHeightsNoSkid = ['', '6.46', '7.01', '7.80', '7.80', '8.46', '9.21', '9.65', '10.76', '11.76', '13.64'];
 
 const selects = [
   document.getElementById('selectionA'),
