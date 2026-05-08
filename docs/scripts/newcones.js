@@ -47,6 +47,116 @@ const OPPOSITE_BRACE_IMG = {
   angle: GUSSET_BRACE_IMG
 };
 
+// Helper function to construct image paths based on new folder structure
+function constructImagePath(coneIndex, binIndex, skidIndex, chuteIndex, airIndex, inletIndex, viewType) {
+  // Base path
+  let path = "resources/images/slide photos/";
+
+  // Special case: 33 footers - images stay at root level
+  if (coneIndex === 10) {
+    return path + "disclaimer.png"; // 33 footers use disclaimer
+  }
+
+  // Cone size folder mapping
+  const coneFolders = {
+    1: '14_footers',
+    2: '15_footers',
+    3: '15_10_16_footers', // 15 ft 10 inch Behlen
+    4: '15_10_16_footers', // 16 ft
+    5: '18_footers',
+    6: '19_footers',
+    7: '21_footers',
+    8: '24_footers',
+    9: '27_footers'
+  };
+
+  // Bin type folder mapping (only for 18 and 21 footers)
+  const binFolders = {
+    1: 'Behlen',
+    2: '5_Tier',
+    3: '6_Tier',
+    4: '7_Tier',
+    5: '8_Tier',
+    6: '9_Tier',
+    7: '10_Tier'
+  };
+
+  // Skid type folder mapping
+  const skidFolders = {
+    1: 'no_skid',
+    2: 'double_skid',
+    3: 'triple_skid',
+    4: 'triple_inset_skid',
+    5: 'quad_skid',
+    6: 'quad_inset_skid',
+    7: 'heavy_quad_skid'
+  };
+
+  // Chute type folder mapping
+  const chuteFolders = {
+    1: 'standard_chute',
+    2: 'rack_n_pinion'
+  };
+
+  // Air type folder mapping
+  const airFolders = {
+    1: 'no_air',
+    2: 'v_air',
+    3: 'x_air'
+  };
+
+  // Inlet type folder mapping (no folder for 'Not Applicable')
+  const inletFolders = {
+    1: '18_inch',
+    2: '24_inch',
+    3: '28_inch'
+  };
+
+  // Build path based on cone size
+  path += coneFolders[coneIndex] + "/";
+
+  // Add bin folder for 18 and 21 footers
+  if ((coneIndex === 5 || coneIndex === 7) && binIndex > 0) {
+    path += binFolders[binIndex] + "/";
+  }
+
+  // Add skid folder
+  if (skidIndex > 0) {
+    path += skidFolders[skidIndex] + "/";
+  }
+
+  // Special case: 24 and 27 footers with no_skid or quad_skid - images are directly in skid folder
+  if ((coneIndex === 8 || coneIndex === 9) && (skidIndex === 1 || skidIndex === 5)) {
+    // Determine file extension based on cone size
+    let extension = '.jpg';
+    if (coneIndex === 8) { // 24 footers use .png
+      extension = '.png';
+    }
+    // Return path with view type - images are directly in skid folder
+    return path + viewType.replace('.jpg', extension);
+  }
+
+  // Add chute folder
+  if (chuteIndex > 0) {
+    path += chuteFolders[chuteIndex] + "/";
+  }
+
+  // Add air folder
+  if (airIndex > 0) {
+    path += airFolders[airIndex] + "/";
+  }
+
+  // Add inlet folder (only if not 'Not Applicable' and air is not 'No Air')
+  if (inletIndex > 0 && inletIndex < 4 && airIndex !== 1) {
+    path += inletFolders[inletIndex] + "/";
+  }
+
+  // Add view type
+  path += viewType;
+
+  return path;
+}
+
 function resetSlides() {
   slides.forEach(slide => slide.src = PLACEHOLDER_IMG);
 }
@@ -6289,8 +6399,18 @@ function updateOutput() {
     outputs.capacity.textContent = match.capacity;
     outputs.leg.textContent = match.leg;
     outputs.height.textContent = skidIndex === 1 ? coneHeightsNoSkid[coneIndex] : coneHeightsWithSkid[coneIndex];
+
+    // Set slide images dynamically based on new folder structure
+    const viewTypes = [' Front View.jpg', ' Iso View.jpg', ' Top View.jpg'];
     slides.forEach((slide, i) => {
-      slide.src = match.images[i] || PLACEHOLDER_IMG;
+      // Check if this is a disclaimer config (all images are disclaimer.png)
+      if (match.images && match.images[i] && match.images[i].includes('disclaimer.png')) {
+        slide.src = 'resources/images/slide photos/disclaimer.png';
+      } else {
+        // Construct path dynamically
+        const viewType = viewTypes[i];
+        slide.src = constructImagePath(coneIndex, binIndex, skidIndex, chuteIndex, airIndex, inletIndex, viewType);
+      }
     });
 
     // Fourth slide: show the opposite brace type if the selected config defines a braceType.
