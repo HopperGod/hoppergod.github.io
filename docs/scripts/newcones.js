@@ -260,12 +260,7 @@ function updateOutput() {
       bp: 'N/A',
       capacity: '176',
       leg: '8',
-      braceType: 'gusset', // or 'angle' depending on the cone
-      images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
-      ]
+      braceType: 'gusset'
     },
     '1-2-1-1-2-1': {
       weight: '1724',
@@ -6402,14 +6397,18 @@ function updateOutput() {
 
     // Set slide images dynamically based on new folder structure
     const viewTypes = [' Front View.jpg', ' Iso View.jpg', ' Top View.jpg'];
+
+    // Check if this configuration has any real images (not disclaimer)
+    const hasRealImages = match.images && match.images.some(img => img && !img.includes('disclaimer.png'));
+
     slides.forEach((slide, i) => {
-      // Check if this is a disclaimer config (all images are disclaimer.png)
-      if (match.images && match.images[i] && match.images[i].includes('disclaimer.png')) {
-        slide.src = 'resources/images/slide photos/disclaimer.png';
-      } else {
-        // Construct path dynamically
+      if (hasRealImages) {
+        // Use dynamic path construction for configurations with real images
         const viewType = viewTypes[i];
         slide.src = constructImagePath(coneIndex, binIndex, skidIndex, chuteIndex, airIndex, inletIndex, viewType);
+      } else {
+        // Use hardcoded paths for disclaimer configurations
+        slide.src = match.images[i] || PLACEHOLDER_IMG;
       }
     });
 
