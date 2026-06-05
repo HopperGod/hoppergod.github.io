@@ -46,117 +46,6 @@ const OPPOSITE_BRACE_IMG = {
   gusset: ANGLE_BRACE_IMG,
   angle: GUSSET_BRACE_IMG
 };
-
-// Helper function to construct image paths based on new folder structure
-function constructImagePath(coneIndex, binIndex, skidIndex, chuteIndex, airIndex, inletIndex, viewType) {
-  // Base path
-  let path = "resources/images/slide photos/";
-
-  // Special case: 33 footers - images stay at root level
-  if (coneIndex === 10) {
-    return path + "disclaimer.png"; // 33 footers use disclaimer
-  }
-
-  // Cone size folder mapping
-  const coneFolders = {
-    1: '14_footers',
-    2: '15_footers',
-    3: '15_10_16_footers', // 15 ft 10 inch Behlen
-    4: '15_10_16_footers', // 16 ft
-    5: '18_footers',
-    6: '19_footers',
-    7: '21_footers',
-    8: '24_footers',
-    9: '27_footers'
-  };
-
-  // Bin type folder mapping (only for 18 and 21 footers)
-  const binFolders = {
-    1: 'Behlen',
-    2: '5_Tier',
-    3: '6_Tier',
-    4: '7_Tier',
-    5: '8_Tier',
-    6: '9_Tier',
-    7: '10_Tier'
-  };
-
-  // Skid type folder mapping
-  const skidFolders = {
-    1: 'no_skid',
-    2: 'double_skid',
-    3: 'triple_skid',
-    4: 'triple_inset_skid',
-    5: 'quad_skid',
-    6: 'quad_inset_skid',
-    7: 'heavy_quad_skid'
-  };
-
-  // Chute type folder mapping
-  const chuteFolders = {
-    1: 'standard_chute',
-    2: 'rack_n_pinion'
-  };
-
-  // Air type folder mapping
-  const airFolders = {
-    1: 'no_air',
-    2: 'v_air',
-    3: 'x_air'
-  };
-
-  // Inlet type folder mapping (no folder for 'Not Applicable')
-  const inletFolders = {
-    1: '18_inch',
-    2: '24_inch',
-    3: '28_inch'
-  };
-
-  // Build path based on cone size
-  path += coneFolders[coneIndex] + "/";
-
-  // Add bin folder for 18 and 21 footers
-  if ((coneIndex === 5 || coneIndex === 7) && binIndex > 0) {
-    path += binFolders[binIndex] + "/";
-  }
-
-  // Add skid folder
-  if (skidIndex > 0) {
-    path += skidFolders[skidIndex] + "/";
-  }
-
-  // Special case: 24 and 27 footers with no_skid or quad_skid - images are directly in skid folder
-  if ((coneIndex === 8 || coneIndex === 9) && (skidIndex === 1 || skidIndex === 5)) {
-    // Determine file extension based on cone size
-    let extension = '.jpg';
-    if (coneIndex === 8) { // 24 footers use .png
-      extension = '.png';
-    }
-    // Return path with view type - images are directly in skid folder
-    return path + viewType.replace('.jpg', extension);
-  }
-
-  // Add chute folder
-  if (chuteIndex > 0) {
-    path += chuteFolders[chuteIndex] + "/";
-  }
-
-  // Add air folder
-  if (airIndex > 0) {
-    path += airFolders[airIndex] + "/";
-  }
-
-  // Add inlet folder (only if not 'Not Applicable' and air is not 'No Air')
-  if (inletIndex > 0 && inletIndex < 4 && airIndex !== 1) {
-    path += inletFolders[inletIndex] + "/";
-  }
-
-  // Add view type
-  path += viewType;
-
-  return path;
-}
-
 function resetSlides() {
   slides.forEach(slide => slide.src = PLACEHOLDER_IMG);
 }
@@ -260,7 +149,11 @@ function updateOutput() {
       bp: 'N/A',
       capacity: '176',
       leg: '8',
-      braceType: 'gusset'
+      images: [
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png',
+        'resources/images/slide photos/disclaimer.png'
+      ]
     },
     '1-2-1-1-2-1': {
       weight: '1724',
@@ -346,9 +239,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/14 w 2skid Front View.jpg',
-        'resources/images/slide photos/14 w 2skid Iso View.jpg',
-        'resources/images/slide photos/14 w 2skid Top View.jpg'
+        'resources/images/slide photos/14_footers/double_skid/standard_chute/no_air/14 w 2skid Front View.jpg',
+        'resources/images/slide photos/14_footers/double_skid/standard_chute/no_air/14 w 2skid Iso View.jpg',
+        'resources/images/slide photos/14_footers/double_skid/standard_chute/no_air/14 w 2skid Top View.jpg'
       ]
     },
     '1-2-2-1-2-1': {
@@ -391,9 +284,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/14 w 2skid Front View.jpg',
-        'resources/images/slide photos/14 w 2skid Iso View.jpg',
-        'resources/images/slide photos/14 w 2skid Top View.jpg'
+        'resources/images/slide photos/14_footers/double_skid/standard_chute/no_air/14 w 2skid Front View.jpg',
+        'resources/images/slide photos/14_footers/double_skid/standard_chute/no_air/14 w 2skid Iso View.jpg',
+        'resources/images/slide photos/14_footers/double_skid/standard_chute/no_air/14 w 2skid Top View.jpg'
       ]
     },
     '1-3-2-1-2-1': {
@@ -679,9 +572,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-2-2-2-2-1': {
@@ -691,9 +584,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/15 w 2skid Front View.jpg',
-        'resources/images/slide photos/15 w 2skid Iso View.jpg',
-        'resources/images/slide photos/15 w 2skid Top View.jpg'
+        'resources/images/slide photos/15_footers/double_skid/rack_n_pinion/v_air/18_inlet/15 w 2skid Front View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/rack_n_pinion/v_air/18_inlet/15 w 2skid Iso View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/rack_n_pinion/v_air/18_inlet/15 w 2skid Top View.jpg'
       ]
     },
     '2-2-2-1-2-2': {
@@ -703,9 +596,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-2-2-2-2-2': {
@@ -748,9 +641,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-3-2-2-2-1': {
@@ -760,9 +653,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/15 w 2skid Front View.jpg',
-        'resources/images/slide photos/15 w 2skid Iso View.jpg',
-        'resources/images/slide photos/15 w 2skid Top View.jpg'
+        'resources/images/slide photos/15_footers/double_skid/rack_n_pinion/v_air/18_inlet/15 w 2skid Front View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/rack_n_pinion/v_air/18_inlet/15 w 2skid Iso View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/rack_n_pinion/v_air/18_inlet/15 w 2skid Top View.jpg'
       ]
     },
     '2-3-2-1-2-2': {
@@ -772,9 +665,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/15_5-6_DS_SP_VA Front View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Iso View.jpg',
-        'resources/images/slide photos/15_5-6_DS_SP_VA Top View.jpg'
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Front View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Iso View.jpg',
+        'resources/images/slide photos/15_footers/double_skid/standard_chute/v_air/18_inlet/15_5-6_DS_SP_VA Top View.jpg'
       ]
     },
     '2-3-2-2-2-2': {
@@ -795,9 +688,9 @@ function updateOutput() {
       leg: '8',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/15_5-6_TS_SP_NA Front View.jpg',
-        'resources/images/slide photos/15_5-6_TS_SP_NA Iso View.jpg',
-        'resources/images/slide photos/15_5-6_TS_SP_NA Top View.jpg'
+        'resources/images/slide photos/15_footers/triple_skid/standard_chute/no_air/15_5-6_TS_SP_NA Front View.jpg',
+        'resources/images/slide photos/15_footers/triple_skid/standard_chute/no_air/15_5-6_TS_SP_NA Iso View.jpg',
+        'resources/images/slide photos/15_footers/triple_skid/standard_chute/no_air/15_5-6_TS_SP_NA Top View.jpg'
       ]
     },
     '2-2-3-2-1-4': {
@@ -860,10 +753,11 @@ function updateOutput() {
       bp: '30',
       capacity: '234',
       leg: '8',
+      braceType: 'angle',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/15_footers/triple_skid/standard_chute/no_air/15_5-6_TS_SP_NA Front View.jpg',
+        'resources/images/slide photos/15_footers/triple_skid/standard_chute/no_air/15_5-6_TS_SP_NA Iso View.jpg',
+        'resources/images/slide photos/15_footers/triple_skid/standard_chute/no_air/15_5-6_TS_SP_NA Top View.jpg'
       ]
     },
     '2-3-3-2-1-4': {
@@ -1006,9 +900,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/16_5-6-DS-RP_NA Front View.jpg',
-        'resources/images/slide photos/16_5-6-DS-RP_NA Iso View.jpg',
-        'resources/images/slide photos/16_5-6-DS-RP_NA Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Top View.jpg'
       ]
     },
     '3-1-2-1-2-1': {
@@ -1051,9 +945,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Front View.jpg',
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Top View.jpg'
       ]
     },
     '3-1-3-1-1-4': {
@@ -1118,9 +1012,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Front View.jpg',
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Top View.jpg'
       ]
     },
     //16 footers
@@ -1274,9 +1168,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/16_5-6-DS-RP_NA Front View.jpg',
-        'resources/images/slide photos/16_5-6-DS-RP_NA Iso View.jpg',
-        'resources/images/slide photos/16_5-6-DS-RP_NA Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Top View.jpg'
       ]
     },
     '4-2-2-1-2-1': {
@@ -1319,9 +1213,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Front View.jpg',
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Top View.jpg'
       ]
     },
     '4-3-2-1-1-4': {
@@ -1342,9 +1236,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/16_5-6-DS-RP_NA Front View.jpg',
-        'resources/images/slide photos/16_5-6-DS-RP_NA Iso View.jpg',
-        'resources/images/slide photos/16_5-6-DS-RP_NA Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/no_air/16_5-6-DS-RP_NA Top View.jpg'
       ]
     },
     '4-3-2-1-2-1': {
@@ -1387,9 +1281,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Front View.jpg',
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/1510-16_B_DS_RP_VA_24 Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/double_skid/rack_n_pinion/v_air/24_inlet/1510-16_B_DS_RP_VA_24 Top View.jpg'
       ]
     },
     '4-2-3-1-1-4': {
@@ -1454,9 +1348,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Front View.jpg',
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Top View.jpg'
       ]
     },
     '4-3-3-1-1-4': {
@@ -1521,9 +1415,9 @@ function updateOutput() {
       leg: '10',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Front View.jpg',
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/16_5-6_TS_RP_VA_24 Top View.jpg'
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/15_10_16_footers/triple_skid/rack_n_pinion/v_air/24_inlet/16_5-6_TS_RP_VA_24 Top View.jpg'
       ]
     },
     //18 footers
@@ -1534,9 +1428,9 @@ function updateOutput() {
       leg: '12',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/18_5-6_NS_SP_NA Front View.jpg',
-        'resources/images/slide photos/18_5-6_NS_SP_NA Iso View.jpg',
-        'resources/images/slide photos/18_5-6_NS_SP_NA Top View.jpg'
+        'resources/images/slide photos/18_footers/5_6/no_skid/standard_chute/no_air/18_5-6_NS_SP_NA Front View.jpg',
+        'resources/images/slide photos/18_footers/5_6/no_skid/standard_chute/no_air/18_5-6_NS_SP_NA Iso View.jpg',
+        'resources/images/slide photos/18_footers/5_6/no_skid/standard_chute/no_air/18_5-6_NS_SP_NA Top View.jpg'
       ]
     },
     '5-2-1-2-1-4': {
@@ -1646,9 +1540,9 @@ function updateOutput() {
       leg: '12',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/18_5-6_NS_SP_NA Front View.jpg',
-        'resources/images/slide photos/18_5-6_NS_SP_NA Iso View.jpg',
-        'resources/images/slide photos/18_5-6_NS_SP_NA Top View.jpg'
+        'resources/images/slide photos/18_footers/5_6/no_skid/standard_chute/no_air/18_5-6_NS_SP_NA Front View.jpg',
+        'resources/images/slide photos/18_footers/5_6/no_skid/standard_chute/no_air/18_5-6_NS_SP_NA Iso View.jpg',
+        'resources/images/slide photos/18_footers/5_6/no_skid/standard_chute/no_air/18_5-6_NS_SP_NA Top View.jpg'
       ]
     },
     '5-3-1-2-1-4': {
@@ -1980,9 +1874,9 @@ function updateOutput() {
       leg: '12',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/18 w 3skid Front View.jpg',
-        'resources/images/slide photos/18 w 3skid Iso View.jpg',
-        'resources/images/slide photos/18 w 3skid Top View.jpg'
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/no_air/18 w 3skid Front View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/no_air/18 w 3skid Iso View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/no_air/18 w 3skid Top View.jpg'
       ]
     },
     '5-2-3-2-1-4': {
@@ -2025,9 +1919,9 @@ function updateOutput() {
       leg: '12',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Front View.jpg',
-        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Top View.jpg'
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/v_air/24_inlet/18_5-6_TS_SP_VA_24 Front View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/v_air/24_inlet/18_5-6_TS_SP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/v_air/24_inlet/18_5-6_TS_SP_VA_24 Top View.jpg'
       ]
     },
     '5-2-3-2-2-2': {
@@ -2093,9 +1987,9 @@ function updateOutput() {
       leg: '12',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/18 w 3skid Front View.jpg',
-        'resources/images/slide photos/18 w 3skid Iso View.jpg',
-        'resources/images/slide photos/18 w 3skid Top View.jpg'
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/no_air/18 w 3skid Front View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/no_air/18 w 3skid Iso View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/no_air/18 w 3skid Top View.jpg'
       ]
     },
     '5-3-3-2-1-4': {
@@ -2138,9 +2032,9 @@ function updateOutput() {
       leg: '12',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Front View.jpg',
-        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/18_5-6_TS_SP_VA_24 Top View.jpg'
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/v_air/24_inlet/18_5-6_TS_SP_VA_24 Front View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/v_air/24_inlet/18_5-6_TS_SP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/18_footers/5_6/triple_skid/standard_chute/v_air/24_inlet/18_5-6_TS_SP_VA_24 Top View.jpg'
       ]
     },
     '5-3-3-2-2-2': {
@@ -2594,9 +2488,9 @@ function updateOutput() {
       leg: '12',
       braceType: 'gusset',
       images: [
-        'resources/images/slide photos/19_8_TS_RP_VA_24 Front View.jpg',
-        'resources/images/slide photos/19_8_TS_RP_VA_24 Iso View.jpg',
-        'resources/images/slide photos/19_8_TS_RP_VA_24 Top View.jpg'
+        'resources/images/slide photos/19_footers/triple_skid/rack_n_pinion/v_air/24_inlet/19_8_TS_RP_VA_24 Front View.jpg',
+        'resources/images/slide photos/19_footers/triple_skid/rack_n_pinion/v_air/24_inlet/19_8_TS_RP_VA_24 Iso View.jpg',
+        'resources/images/slide photos/19_footers/triple_skid/rack_n_pinion/v_air/24_inlet/19_8_TS_RP_VA_24 Top View.jpg'
       ]
     },
     '6-5-3-1-3-1': {
@@ -3116,9 +3010,9 @@ function updateOutput() {
       leg: '14',
       braceType: 'angle',
       images: [
-        'resources/images/slide photos/21 w 3skid Front View.jpg',
-        'resources/images/slide photos/21 w 3skid Iso View.jpg',
-        'resources/images/slide photos/21 w 3skid Top View.jpg'
+        'resources/images/slide photos/21_footers/6/triple_skid/standard_chute/no_air/21 w 3skid Front View.jpg',
+        'resources/images/slide photos/21_footers/6/triple_skid/standard_chute/no_air/21 w 3skid Iso View.jpg',
+        'resources/images/slide photos/21_footers/6/triple_skid/standard_chute/no_air/21 w 3skid Top View.jpg'
       ]
     },
     '7-3-3-2-1-4': {
@@ -4046,9 +3940,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-2-1-4': {
@@ -4057,31 +3951,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-3-1-1-2-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-3-1-2-2-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-1-2-2': {
@@ -4090,9 +3962,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-2-2-2': {
@@ -4101,9 +3973,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-1-2-3': {
@@ -4112,9 +3984,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-2-2-3': {
@@ -4123,31 +3995,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-3-1-1-3-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-3-1-2-3-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-1-3-2': {
@@ -4156,9 +4006,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-2-3-2': {
@@ -4167,9 +4017,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-1-3-3': {
@@ -4178,9 +4028,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-3-1-2-3-3': {
@@ -4189,9 +4039,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
 
@@ -4201,9 +4051,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-2-1-4': {
@@ -4212,31 +4062,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-4-1-1-2-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-4-1-2-2-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-1-2-2': {
@@ -4245,9 +4073,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-2-2-2': {
@@ -4256,9 +4084,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-1-2-3': {
@@ -4267,9 +4095,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-2-2-3': {
@@ -4278,31 +4106,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-4-1-1-3-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-4-1-2-3-1': {
-      weight: '7250',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-1-3-2': {
@@ -4311,9 +4117,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-2-3-2': {
@@ -4322,9 +4128,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-1-3-3': {
@@ -4333,9 +4139,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-4-1-2-3-3': {
@@ -4344,9 +4150,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
 
@@ -4356,9 +4162,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-5-2-1-4': {
@@ -4366,32 +4172,11 @@ function updateOutput() {
       bp: '42',
       capacity: '1043',
       leg: '16',
+      braceType: 'angle',
       images: [
-        'resources/images/slide photos/24 w 4skid Front View.jpg',
-        'resources/images/slide photos/24 w 4skid Iso View.jpg',
-        'resources/images/slide photos/24 w 4skid Top View.jpg'
-      ]
-    },
-    '8-3-5-1-2-1': {
-      weight: '9350',
-      bp: '42',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-3-5-2-2-1': {
-      weight: '9350',
-      bp: '42',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Top View.jpg'
       ]
     },
     '8-3-5-1-2-2': {
@@ -4400,9 +4185,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-5-2-2-2': {
@@ -4411,19 +4196,20 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
-    },'7-3-5-1-2-3': {
+    },
+    '8-3-5-1-2-3': {
       weight: '9350',
       bp: '42',
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-5-2-2-3': {
@@ -4432,31 +4218,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-3-5-1-3-1': {
-      weight: '9350',
-      bp: '42',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-3-5-2-3-1': {
-      weight: '9350',
-      bp: '42',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-5-1-3-2': {
@@ -4465,9 +4229,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-5-2-3-2': {
@@ -4476,9 +4240,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-5-1-3-3': {
@@ -4487,9 +4251,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-5-2-3-3': {
@@ -4498,8 +4262,8 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
         'resources/images/slide photos/24 w Skid Iso Low View.png'
       ]
     },
@@ -4510,9 +4274,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-5-2-1-4': {
@@ -4521,31 +4285,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w 4skid Front View.jpg',
-        'resources/images/slide photos/24 w 4skid Iso View.jpg',
-        'resources/images/slide photos/24 w 4skid Top View.jpg'
-      ]
-    },
-    '8-4-5-1-2-1': {
-      weight: '9350',
-      bp: '47',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-4-5-2-2-1': {
-      weight: '9350',
-      bp: '47',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Top View.jpg'
       ]
     },
     '8-4-5-1-2-2': {
@@ -4554,9 +4296,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-5-2-2-2': {
@@ -4565,19 +4307,20 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
-    },'7-4-5-1-2-3': {
+    },
+    '8-4-5-1-2-3': {
       weight: '9350',
       bp: '47',
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-5-2-2-3': {
@@ -4586,31 +4329,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-4-5-1-3-1': {
-      weight: '9350',
-      bp: '47',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-4-5-2-3-1': {
-      weight: '9350',
-      bp: '47',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-5-1-3-2': {
@@ -4619,9 +4340,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-5-2-3-2': {
@@ -4630,9 +4351,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-5-1-3-3': {
@@ -4641,9 +4362,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-5-2-3-3': {
@@ -4652,9 +4373,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
 
@@ -4664,9 +4385,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-2-1-4': {
@@ -4675,31 +4396,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w 4skid Front View.jpg',
-        'resources/images/slide photos/24 w 4skid Iso View.jpg',
-        'resources/images/slide photos/24 w 4skid Top View.jpg'
-      ]
-    },
-    '8-3-7-1-2-1': {
-      weight: '9695',
-      bp: '41',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-3-7-2-2-1': {
-      weight: '9695',
-      bp: '41',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Top View.jpg'
       ]
     },
     '8-3-7-1-2-2': {
@@ -4708,9 +4407,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-2-2-2': {
@@ -4719,9 +4418,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-1-2-3': {
@@ -4730,9 +4429,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-2-2-3': {
@@ -4741,31 +4440,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-3-7-1-3-1': {
-      weight: '9695',
-      bp: '41',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-3-7-2-3-1': {
-      weight: '9695',
-      bp: '41',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-1-3-2': {
@@ -4774,9 +4451,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-2-3-2': {
@@ -4785,9 +4462,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-1-3-3': {
@@ -4796,9 +4473,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-3-7-2-3-3': {
@@ -4807,9 +4484,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
 
@@ -4819,9 +4496,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-2-1-4': {
@@ -4830,31 +4507,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w 4skid Front View.jpg',
-        'resources/images/slide photos/24 w 4skid Iso View.jpg',
-        'resources/images/slide photos/24 w 4skid Top View.jpg'
-      ]
-    },
-    '8-4-7-1-2-1': {
-      weight: '9695',
-      bp: 'placeholder',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-4-7-2-2-1': {
-      weight: '9695',
-      bp: 'placeholder',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Top View.jpg'
       ]
     },
     '8-4-7-1-2-2': {
@@ -4863,9 +4518,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-2-2-2': {
@@ -4874,9 +4529,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-1-2-3': {
@@ -4885,9 +4540,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-2-2-3': {
@@ -4896,31 +4551,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-4-7-1-3-1': {
-      weight: '9695',
-      bp: 'placeholder',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-4-7-2-3-1': {
-      weight: '9695',
-      bp: 'placeholder',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-1-3-2': {
@@ -4929,9 +4562,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-2-3-2': {
@@ -4940,9 +4573,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-1-3-3': {
@@ -4951,9 +4584,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-4-7-2-3-3': {
@@ -4962,9 +4595,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
 
@@ -4974,9 +4607,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-2-1-4': {
@@ -4985,31 +4618,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-5-1-1-2-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-5-1-2-2-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-1-2-2': {
@@ -5018,9 +4629,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-2-2-2': {
@@ -5029,9 +4640,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-1-2-3': {
@@ -5040,9 +4651,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-2-2-3': {
@@ -5051,31 +4662,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-5-1-1-3-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-5-1-2-3-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-1-3-2': {
@@ -5084,9 +4673,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-2-3-2': {
@@ -5095,9 +4684,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-1-3-3': {
@@ -5106,9 +4695,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-5-1-2-3-3': {
@@ -5117,9 +4706,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
 
@@ -5129,9 +4718,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-2-1-4': {
@@ -5140,31 +4729,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-6-1-1-2-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-6-1-2-2-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-1-2-2': {
@@ -5173,9 +4740,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-2-2-2': {
@@ -5184,9 +4751,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-1-2-3': {
@@ -5195,9 +4762,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-2-2-3': {
@@ -5206,31 +4773,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-6-1-1-3-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
-      ]
-    },
-    '8-6-1-2-3-1': {
-      weight: '7830',
-      bp: 'N/A',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-1-3-2': {
@@ -5239,9 +4784,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-2-3-2': {
@@ -5250,9 +4795,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-1-3-3': {
@@ -5261,9 +4806,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
     '8-6-1-2-3-3': {
@@ -5272,9 +4817,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Pads Front View.png',
-        'resources/images/slide photos/24 w Pads Iso View.png',
-        'resources/images/slide photos/24 w Pads Iso Low View.png'
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Front View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso View.png',
+        'resources/images/slide photos/24_footers/no_skid/24 w Pads Iso Low View.png'
       ]
     },
 
@@ -5284,9 +4829,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-2-1-4': {
@@ -5295,31 +4840,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w 4skid Front View.jpg',
-        'resources/images/slide photos/24 w 4skid Iso View.jpg',
-        'resources/images/slide photos/24 w 4skid Top View.jpg'
-      ]
-    },
-    '8-5-7-1-2-1': {
-      weight: '10250',
-      bp: '39',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-5-7-2-2-1': {
-      weight: '10250',
-      bp: '39',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Top View.jpg'
       ]
     },
     '8-5-7-1-2-2': {
@@ -5328,9 +4851,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-2-2-2': {
@@ -5339,9 +4862,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-1-2-3': {
@@ -5350,9 +4873,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-2-2-3': {
@@ -5361,31 +4884,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-5-7-1-3-1': {
-      weight: '10250',
-      bp: '39',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-5-7-2-3-1': {
-      weight: '10250',
-      bp: '39',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-1-3-2': {
@@ -5394,9 +4895,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-2-3-2': {
@@ -5405,9 +4906,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-1-3-3': {
@@ -5416,9 +4917,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-5-7-2-3-3': {
@@ -5427,9 +4928,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
 
@@ -5439,9 +4940,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-2-1-4': {
@@ -5450,31 +4951,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w 4skid Front View.jpg',
-        'resources/images/slide photos/24 w 4skid Iso View.jpg',
-        'resources/images/slide photos/24 w 4skid Top View.jpg'
-      ]
-    },
-    '8-6-7-1-2-1': {
-      weight: '10250',
-      bp: '43',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-6-7-2-2-1': {
-      weight: '10250',
-      bp: '43',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Front View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Iso View.jpg',
+        'resources/images/slide photos/24_footers/quad_skid/rack_n_pinion/no_air/24 w 4skid Top View.jpg'
       ]
     },
     '8-6-7-1-2-2': {
@@ -5483,9 +4962,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-2-2-2': {
@@ -5494,9 +4973,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-1-2-3': {
@@ -5505,9 +4984,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-2-2-3': {
@@ -5516,31 +4995,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-6-7-1-3-1': {
-      weight: '10250',
-      bp: '43',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
-      ]
-    },
-    '8-6-7-2-3-1': {
-      weight: '10250',
-      bp: '43',
-      capacity: '1043',
-      leg: '16',
-      images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-1-3-2': {
@@ -5549,9 +5006,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-2-3-2': {
@@ -5560,9 +5017,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-1-3-3': {
@@ -5571,9 +5028,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     '8-6-7-2-3-3': {
@@ -5582,9 +5039,9 @@ function updateOutput() {
       capacity: '1043',
       leg: '16',
       images: [
-        'resources/images/slide photos/24 w Skid Front View.png',
-        'resources/images/slide photos/24 w Skid Iso View.png',
-        'resources/images/slide photos/24 w Skid Iso Low View.png'
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Front View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso View.png',
+        'resources/images/slide photos/24_footers/quad_skid/24 w Skid Iso Low View.png'
       ]
     },
     //27 footers
@@ -5594,9 +5051,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-2-1-2-1-4': {
@@ -5605,9 +5062,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-2-1-1-2-3': {
@@ -5616,9 +5073,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-2-1-2-2-3': {
@@ -5627,9 +5084,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-2-1-1-3-3': {
@@ -5638,9 +5095,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-2-1-2-3-3': {
@@ -5649,9 +5106,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-2-5-1-1-4': {
@@ -5660,9 +5117,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-2-5-2-1-4': {
@@ -5671,9 +5128,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-2-5-1-2-3': {
@@ -5682,9 +5139,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-2-5-2-2-3': {
@@ -5693,9 +5150,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-2-5-1-3-3': {
@@ -5704,9 +5161,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-2-5-2-3-3': {
@@ -5715,9 +5172,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-3-1-1-1-4': {
@@ -5726,9 +5183,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-3-1-2-1-4': {
@@ -5737,9 +5194,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-3-1-1-2-3': {
@@ -5748,9 +5205,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-3-1-2-2-3': {
@@ -5759,9 +5216,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-3-1-1-3-3': {
@@ -5770,9 +5227,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-3-1-2-3-3': {
@@ -5781,9 +5238,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-3-5-1-1-4': {
@@ -5792,9 +5249,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-3-5-2-1-4': {
@@ -5803,9 +5260,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-3-5-1-2-3': {
@@ -5814,9 +5271,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-3-5-2-2-3': {
@@ -5825,9 +5282,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-3-5-1-3-3': {
@@ -5836,9 +5293,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-3-5-2-3-3': {
@@ -5847,9 +5304,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-4-1-1-1-4': {
@@ -5858,9 +5315,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-4-1-2-1-4': {
@@ -5869,9 +5326,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-4-1-1-2-3': {
@@ -5880,9 +5337,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-4-1-2-2-3': {
@@ -5891,9 +5348,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-4-1-1-3-3': {
@@ -5902,9 +5359,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-4-1-2-3-3': {
@@ -5913,9 +5370,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-4-5-1-1-4': {
@@ -5924,9 +5381,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-4-5-2-1-4': {
@@ -5935,9 +5392,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-4-5-1-2-3': {
@@ -5946,9 +5403,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-4-5-2-2-3': {
@@ -5957,9 +5414,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-4-5-1-3-3': {
@@ -5968,9 +5425,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-4-5-2-3-3': {
@@ -5979,9 +5436,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png',
-        'resources/images/slide photos/disclaimer.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
 
@@ -5991,9 +5448,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-5-1-2-1-4': {
@@ -6002,9 +5459,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-5-1-1-2-3': {
@@ -6013,9 +5470,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-5-1-2-2-3': {
@@ -6024,9 +5481,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-5-1-1-3-3': {
@@ -6035,9 +5492,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-5-1-2-3-3': {
@@ -6046,9 +5503,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-6-1-1-1-4': {
@@ -6057,9 +5514,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-6-1-2-1-4': {
@@ -6068,9 +5525,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-6-1-1-2-3': {
@@ -6079,9 +5536,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-6-1-2-2-3': {
@@ -6090,9 +5547,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-6-1-1-3-3': {
@@ -6101,9 +5558,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
     '9-6-1-2-3-3': {
@@ -6112,9 +5569,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Pads Front View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso View.png',
-        'resources/images/slide photos/2708 09 w Pads Iso Low View.png'
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Front View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso View.png',
+        'resources/images/slide photos/27_footers/no_skid/2708 09 w Pads Iso Low View.png'
       ]
     },
 
@@ -6124,9 +5581,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w SKid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w SKid Iso Low View.png'
       ]
     },
     '9-5-5-2-1-4': {
@@ -6135,9 +5592,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-5-5-1-2-3': {
@@ -6146,9 +5603,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w SKid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w SKid Iso Low View.png'
       ]
     },
     '9-5-5-2-2-3': {
@@ -6157,9 +5614,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-5-5-1-3-3': {
@@ -6168,9 +5625,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w SKid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w SKid Iso Low View.png'
       ]
     },
     '9-5-5-2-3-3': {
@@ -6179,9 +5636,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
 
@@ -6191,9 +5648,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w SKid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w SKid Iso Low View.png'
       ]
     },
     '9-6-7-2-1-4': {
@@ -6202,9 +5659,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-6-7-1-2-3': {
@@ -6213,9 +5670,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w SKid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w SKid Iso Low View.png'
       ]
     },
     '9-6-7-2-2-3': {
@@ -6224,9 +5681,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     '9-6-7-1-3-3': {
@@ -6235,9 +5692,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w SKid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w SKid Iso Low View.png'
       ]
     },
     '9-6-7-2-3-3': {
@@ -6246,9 +5703,9 @@ function updateOutput() {
       capacity: '1464',
       leg: '18',
       images: [
-        'resources/images/slide photos/2708 09 w Skid Front View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso View.png',
-        'resources/images/slide photos/2708 09 w Skid Iso Low View.png'
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Front View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso View.png',
+        'resources/images/slide photos/27_footers/quad_skid/2708 09 w Skid Iso Low View.png'
       ]
     },
     //33 footers
@@ -6395,21 +5852,9 @@ function updateOutput() {
     outputs.leg.textContent = match.leg;
     outputs.height.textContent = skidIndex === 1 ? coneHeightsNoSkid[coneIndex] : coneHeightsWithSkid[coneIndex];
 
-    // Set slide images dynamically based on new folder structure
-    const viewTypes = [' Front View.jpg', ' Iso View.jpg', ' Top View.jpg'];
-
-    // Check if this configuration has any real images (not disclaimer)
-    const hasRealImages = match.images && match.images.some(img => img && !img.includes('disclaimer.png'));
-
+    // Set slide images from configuration
     slides.forEach((slide, i) => {
-      if (hasRealImages) {
-        // Use dynamic path construction for configurations with real images
-        const viewType = viewTypes[i];
-        slide.src = constructImagePath(coneIndex, binIndex, skidIndex, chuteIndex, airIndex, inletIndex, viewType);
-      } else {
-        // Use hardcoded paths for disclaimer configurations
-        slide.src = match.images[i] || PLACEHOLDER_IMG;
-      }
+      slide.src = match.images[i] || PLACEHOLDER_IMG;
     });
 
     // Fourth slide: show the opposite brace type if the selected config defines a braceType.
@@ -6511,11 +5956,16 @@ function onSelectionChange(index) {
         Array.from(inletSelect.options).forEach((opt, idx) => {
           if (![0, 1, 2].includes(idx)) opt.disabled = true;
         });
-      } else if ([7, 8].includes(coneIndex)) {
-        // 21 ft, 24 ft — 18, 24, 28 inch
+      } else if ([7].includes(coneIndex)) {
+        // 21 ft — 18, 24, 28 inch
         Array.from(inletSelect.options).forEach((opt, idx) => {
           if (![0, 1, 2, 3].includes(idx)) opt.disabled = true;
         });
+      } else if (coneIndex === 8) {
+        // 24 ft — 24 or 28 inch
+        Array.from(inletSelect.options).forEach((opt, idx) => {
+          if (![0, 2, 3].includes(idx)) opt.disabled = true;
+        });        
       } else if ([9, 10].includes(coneIndex)) {
         // 27 ft, 33 ft — only 28 inch
         Array.from(inletSelect.options).forEach((opt, idx) => {
